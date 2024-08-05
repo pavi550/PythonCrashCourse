@@ -111,8 +111,8 @@ print(not a)
 
 ----------------------------------
 #Bitwise Operators
-'''Bitwise operators act on bits and perform the bit-by-bit operations. These are used to operate on binary numbers.
-and = &, not = ~,or = |, Xor = ^, right shift = >>, left shift = << .'''
+#'''Bitwise operators act on bits and perform the bit-by-bit operations. These are used to operate on binary numbers.
+# and = &, not = ~,or = |, Xor = ^, right shift = >>, left shift = << .'''
 
 # Examples of Bitwise operators
 a = 10
