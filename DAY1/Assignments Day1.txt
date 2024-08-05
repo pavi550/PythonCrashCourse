@@ -13,7 +13,7 @@ Consider use range(#begin, #end) method
 *****
 ******
 
-3.Please write a program which accepts basic mathematic expression from console and print the evaluation result.
+3.Please write a program which :accepts basic mathematic expression from console and print the evaluation result.
 
 4.Write a Python program which accepts the radius of a circle from the user and compute the area.
 
