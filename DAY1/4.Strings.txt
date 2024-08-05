@@ -263,7 +263,7 @@ print(String1)
 
 ------------------------------------------
 
-
+str1='Nashi Delhi character are place to present'
 
 # print the 10th element of the string
 # print substring starting from 9th element
