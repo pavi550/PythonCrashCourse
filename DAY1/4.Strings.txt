@@ -1,0 +1,276 @@
+#Creating a String
+
+# Python Program for Creation of String
+
+# Creating a String with single Quotes
+String1 = 'Welcome to the Python'
+print("String with the use of Single Quotes: ")
+print(String1)
+
+# Creating a String with double Quotes
+String1 = "I'm a Programmer"
+print("\nString with the use of Double Quotes: ")
+print(String1)
+
+# Creating a String with triple Quotes
+String1 = '''Python a general purpose programming language'''
+print("\nString with the use of Triple Quotes: ")
+print(String1)
+
+# Creating String with triple
+# Quotes allows multiple lines
+
+String1 = '''Python supports OOPs.
+Classes and objects can be created in python.
+we also create functions in python.'''
+print("\nCreating a multiline String: ")
+print(String1)
+
+
+---------------------------------------------
+
+#Accessing characters in Python
+
+# Python Program to Access
+# characters of String
+
+String1 = "Python Programming"
+print("Initial String: ")
+print(String1)
+
+# Printing First character
+print("First character of String is: ")
+print(String1[0])
+
+# Printing Fifth character
+print("Fifth character of String is: ")
+print(String1[4])
+
+# Printing Last character
+print("Last character of String is: ")
+print(String1[-1])
+
+------------------------------------------
+str = "welcome to python"
+print(str)
+print(str[0])
+print(str[1])
+print(str[6])
+print(type(str))  # type function is used to get the type of the particular variable
+-----------------------------------------
+
+#String slicing
+
+syntax:  string[start:stop:step]  #start =0 ,stop is exclusive
+
+test = "Python Programming"
+print("String: ", test)
+
+# First one character
+first_character = test[:1]  #test[0:1]
+print("First Character: ", first_character)
+
+# Last one character
+last_character = test[-1:]
+print("Last Character: ", last_character)
+
+# Everything except the first one character
+except_first = test[1:]
+print("Except First Char.: ", except_first)
+
+# Everything except the last one character
+except_last = test[:-1]    #test[0:-1]
+print("Except First Char.: ", except_last)
+
+# Everything between first and last two character
+between_two = test[2:-2]
+print("Between two character: ", between_two)
+
+# Skip one character
+skip_one = test[0:18:2]  # [start:stop:step]
+print("Skip one character: ", skip_one)
+
+# Reverse String
+reverse_str = test[::-1]   test[15:12] test[5:]  test[12:18:2]
+print("Reverse String: ", reverse_str)
+
+
+
+## Python Program to
+# demonstrate String slicing
+
+# Creating a String
+String1 = "Python Programming"
+print("Initial String: ")
+print(String1)
+
+# Printing 3rd to 12th character
+print("Slicing characters from 3-12: ")
+print(String1[3:12])
+
+# Printing characters between
+# 3rd and 2nd last character
+print("Slicing characters between " +
+	"3rd and 2nd last character: ")
+print(String1[3:-2])
+
+
+-------------------------------------
+
+#Deleting/Updating from a String
+
+# Python Program to Update
+# character of a String
+
+String1 = "Python Programming"
+print("Initial String: ")
+print(String1)
+
+# Updating a character
+# of the String
+String1[2] = 'p'
+print("Updating character at 2nd Index: ")
+print(String1)
+
+---------------------------------------
+
+#Updating Entire String:
+
+# Python Program to Update
+# entire String
+
+String1 = "Python Programming"
+print("Initial String: ")
+print(String1)
+
+# Updating a String
+String1 = "Welcome to the Python Programming"
+print("Updated String: ")
+print(String1)
+
+--------------------------------------------
+#Deletion of a character: 
+
+# Python Program to Delete
+# characters from a String
+
+String1 = "Welcome to the Python Programming"
+print("Initial String: ")
+print(String1)
+
+# Deleting a character of the String
+
+del String1[2]
+print("Deleting character at 2nd Index: ")
+print(String1)
+
+--------------------------------------------
+#Deleting Entire String:
+
+# Python Program to Delete
+# entire String
+
+String1 = "Welcome to the Python Programming"
+print("Initial String: ")
+print(String1)
+
+# Deleting a String
+# with the use of del
+del String1
+print("Deleting entire String: ")
+print(String1)
+
+--------------------------------------------
+
+#Escape Sequencing in Python
+
+# Python Program for
+# Escape Sequencing
+# of String
+
+# Initial String
+String1 = '''I'm a "Programmer"'''
+print("Initial String with use of Triple Quotes: ")
+print(String1)
+
+# Escaping Single Quote
+String1 = 'I\'m a "Programmer"'
+print("Escaping Single Quote: ")
+print(String1)
+
+# Escaping Double Quotes
+String1 = "I'm a \"Programmer\""
+print("Escaping Double Quotes: ")
+print(String1)
+
+# Printing Paths with the
+# use of Escape Sequences
+String1 = "C:\\Python\\Demo\\"
+print("Escaping Backslashes: ")
+print(String1)
+
+-------------------------------------------------
+#Formatting of Strings
+
+# Python Program for
+# Formatting of Strings
+
+# Default order
+String1 = "{} {} {}".format('python', 'java', 'c++')
+print("Print String in default order: ")
+print(String1)
+
+# Positional Formatting
+String1 = "{1} {0} {2}".format('python', 'java', 'c++')
+print("Print String in Positional order: ")
+print(String1)
+
+# Keyword Formatting
+String1 = "{c} {j} {p}".format(p='python', j='java', c='c++')
+print("Print String in order of Keywords: ")
+print(String1)
+
+----------------------------------------
+Integers such as Binary, hexadecimal, etc., and floats can be rounded or displayed in the exponent form with the use of format specifiers. 
+
+# Formatting of Integers
+String1 = "{0:b}".format(16)
+print("Binary representation of 16 is ")
+print(String1)
+
+# Formatting of Floats
+String1 = "{0:e}".format(165.6458)
+print("Exponent representation of 165.6458 is ")
+print(String1)
+
+# Rounding off Integers
+String1 = "{0:.2f}".format(1/6)
+print("one-sixth is : ")
+print(String1)
+
+----------------------------------------
+
+#A string can be left() or center(^) justified with the use of format specifiers, separated by a colon(:).
+
+# String alignment
+String1 = "|{:<10}|{:^10}|{:>10}|".format('Python', 'Java', 'programming')
+print("Left, center and right alignment with Formatting: ")
+print(String1)
+
+# To demonstrate aligning of spaces
+String1 = "{0:^16} was founded in {1:<4}!".format("Python programming", 2021)
+print(String1)
+
+------------------------------------------
+
+
+
+# print the 10th element of the string
+# print substring starting from 9th element
+# print the substring ending at 20th element
+# check wether Pune is present in the string
+# check if Delhi is not in string
+# Given a string, find all the duplicate characters which are similar to each others.
+
+
+

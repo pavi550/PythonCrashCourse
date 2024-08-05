@@ -1,0 +1,85 @@
+Python Variables
+--------------------------
+number = 10
+print(number)
+
+number = 1.1
+print(number)
+
+'''In Python, we don't actually assign values to the variables. Instead, Python gives the reference of the object(value) to the variable.'''
+
+#Declaring and assigning value to a variable
+
+var1 = "python"
+print(var1)
+
+# assigning a new value to var1
+var1 = 25
+print(var1)
+
+#Assigning multiple values to multiple variables
+
+a,b,c = 10,20,30
+print(a)
+print(b)
+print(c)
+
+##Assigning same value to multiple variables
+
+x = y = z = "Python"
+
+print (x)
+print (y)
+print (z)
+
+#Object Identity
+#The built-in id() function, is used to identify the object identifier
+
+a = 'Python'  
+b = a  
+print(id(a))  
+print(id(b))  
+# Reassigned variable a  
+a = 123  
+print(id(a))  
+
+#Printing Single Variable
+
+a = 123  
+print(a)
+
+#Printing Multiple Variables
+
+a = 50 
+b = 60 
+# printing multiple variables  
+print(a,b)  
+# separate the variables by the comma  
+print(10, 20, 30, 40, 50, 60, 70, 80) 
+
+#Data Types
+#Number Variables
+
+a = 50  
+print("The type of a", type(a))  
+  
+b = 40.5  
+print("The type of b", type(b))  
+  
+c = 1+3i  
+print("The type of c", type(c))  
+ 
+#String Variables
+
+str1 = 'This string is in single quotes'
+print(str1)
+
+str1 = "The string with double quotes"
+print(str1)
+
+str1 = '''String with the tripple quotes.
+This string is a multi line string.'''
+print(str1)
+
+
+

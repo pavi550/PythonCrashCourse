@@ -1,0 +1,425 @@
+#Python Control flow statements
+
+#if statement
+
+''' if statement is the most simple decision-making statement.
+It is used to decide whether a certain statement or block of
+statements will be executed or not i.e if a certain condition is true then a
+block of statement is executed otherwise not.'''
+
+Syntax: 
+
+if condition:
+   # Statements to execute if
+   # condition is true
+
+#python uses indentation to identify a block. So the block under an if statement will be identified as
+
+if condition:
+   statement1
+statement2
+
+# Here if the condition is true, if block 
+# will consider only statement1 to be inside 
+# its block.
+
+-------------------------
+# python program to illustrate If statement
+
+
+i = 10
+
+if (i < 15):
+    print("Inside if block")
+    print(i," is less than 15")
+print("Not in the If")
+
+if (i > 15):
+    print("Inside if block")
+    print(i," is less than 15")
+print("Not in the If")
+
+
+------------------------------------
+# program for finding largest of 3 numbers
+
+a = int(input("Enter a? "))    # casting
+b = int(input("Enter b? "))  
+c = int(input("Enter c? "))  
+if a>b and a>c:  
+    print("a is largest")  
+if b>a and b>c:  
+    print("b is largest")  
+if c>a and c>b:  
+    print("c is largest")
+
+-----------------------------------------------
+# input function
+
+num = input("Enter the value for num :") # reads data in String type
+print(num)
+print(type(num))
+
+num = int(input("Enter the value for num :")) # type casting string value to integer value
+print(num)
+print(type(num))
+------------------------------------------------
+# The if-else statement
+
+The if-else statement provides an else block combined with the if statement
+which is executed in the false case of the condition.
+If the condition is true, then the if-block is executed.
+Otherwise, the else-block is executed.
+
+#Syntax
+if condition:  
+    #block of statements   
+else:   
+    #another block of statements (else-block) 
+---------------------------
+
+#Example
+num = int(input("enter the number?"))  
+if num%2 == 0:  
+    print("Number is even...")  
+else:  
+    print("Number is odd...")
+
+-------------------------------
+# python program to illustrate If else statement
+
+i = 20
+if (i < 15):
+	print("i is smaller than 15")
+	print("i'm in if Block")
+else:
+	print("i is greater than 15")
+	print("i'm in else Block")
+print("i'm not in if and not in else Block")
+
+----------------------------------
+#nested-if
+
+A nested if is an if statement that is the target of another if statement.
+Nested if statements mean an if statement inside another if statement.
+
+Syntax: 
+
+if (condition1):
+   # Executes when condition1 is true
+   if (condition2): 
+      # Executes when condition2 is true
+   # if Block is end here
+# if Block is end here
+
+-----------------------------------
+# python program to illustrate nested If statement
+#
+i = 10
+if (i == 10):
+
+	# First if statement
+	if (i < 15):
+		print("i is smaller than 15")
+		
+	# Nested - if statement
+	# Will only be executed if statement above
+	# it is true
+	if (i < 12):
+		print("i is smaller than 12 too")
+	else:
+		print("i is greater than 15")
+print("In the main program")
+
+=========================================
+#if-elif-else ladder
+
+''' Here, a user can decide among multiple options. The if statements are
+executed from the top down. As soon as one of the conditions controlling the if is true, the statement associated with that if is executed, and the rest of the ladder is bypassed. If none of the conditions is true, then the final else statement will be executed. '''
+
+Syntax
+
+if (condition):
+    statement
+elif (condition):
+    statement
+.
+.
+else:
+    statement
+
+--------------------------------------------
+# Python program to illustrate if-elif-else ladder
+
+i = 20
+if (i == 10):
+	print("i is 10")
+elif (i == 15):
+	print("i is 15")
+elif (i == 20):
+	print("i is 20")
+else:
+	print("i is not present")
+
+--------------------------------------------------
+
+marks = int(input("Enter the marks? "))  
+if marks > 85 and marks <= 100:  
+   print("Congrats ! you scored grade A ...")  
+elif marks > 60 and marks <= 85:  
+   print("You scored grade B + ...")  
+elif marks > 40 and marks <= 60:  
+   print("You scored grade B ...")  
+else:  
+   print("Sorry you are fail ?")
+
+----------------------------------------------------
+#For loop
+
+The for loop in Python is used to iterate the
+statements or a part of the program several times.
+
+#Syntax
+for iterating_var in sequence:    
+    statement(s)
+
+#Example
+
+str = "Welcome"  
+for i in str:  
+    print(i,end =' ')
+
+-----------------------------------------------
+#Program to print the sum of the given list.
+
+list = [10,30,23,43,65,12]  
+sum = 0  
+for i in list:  
+    sum = sum+i  
+print("The sum is:",sum) 
+
+---------------------------------------------
+
+#range() function
+Python range() is a built-in function that is used
+when a user needs to perform an action a specific number of times.
+range() in Python(3.x) is just a renamed version of a function called xrange() in Python(2.x).
+The range() function is used to generate the
+sequence of the numbers. If we pass the range(10),
+it will generate the numbers from 0 to 9.
+
+#Syntax
+range(start,stop,step-size)  Exclusive
+
+start: integer starting from which the sequence of integers is to be returned
+stop: integer before which the sequence of integers is to be returned. The range of integers end at stop – 1.
+step: integer value which determines the increment between each integer in the sequence 
+
+
+#Example
+for i in range(10):  
+    print(i,end = ' ')
+
+#Example
+n = int(input("Enter the number "))  
+for i in range(1,11):  
+    c = n*i  
+    print(n,"*",i,"=",c)
+
+
+--------------------------------------------------
+#for loop with else
+
+In most of the programming languages (C/C++, Java, etc),
+the use of else statements has been restricted with the if conditional statements.
+But Python also allows us to use the else condition with for loops.
+
+# Python program to demonstrate
+# for-else loop
+
+for i in range(1, 4):
+	print(i)
+else: # Executed because no break in for
+    print("Else block")
+    print("No Break\n")
+print("for loop completed")
+
+for i in range(1, 4):
+	print(i)
+	break
+else: # Not executed as there is a break
+	print("No Break")
+
+print("for loop completed")
+
+
+---------------------------------------------------
+
+#Nested for loop in python
+Python allows us to nest any number of for loops inside a for loop.
+The inner loop is executed n number of times for
+every iteration of the outer loop.
+
+#Syntax
+for iterating_var1 in sequence:  #outer loop  
+    for iterating_var2 in sequence:  #inner loop  
+        #block of statements     
+#Other statements  
+
+#Example
+rows = int(input("Enter the rows"))  
+for i in range(0,rows+1):  
+    for j in range(i):  
+        print(i,end = '')  
+    print()  
+
+---------------------------------------------------
+#Python While Loop
+
+Python While Loop is used to execute a block of statements repeatedly
+until a given condition is satisfied. And when the condition becomes false,
+the line immediately after the loop in the program is executed.
+While loop falls under the category of indefinite iteration.
+Indefinite iteration means that the number of times the
+loop is executed isn’t specified explicitly in advance.
+
+Syntax: 
+
+while expression:
+    statement(s)
+
+# Python program to illustrate
+# while loop
+count = 0
+while (count < 3):
+	count = count + 1
+	print("Hello Python")
+
+-------------------------------
+#Single statement while block
+
+# Python program to illustrate
+# Single statement while block
+count = 0
+while (count < 5): count += 1; print("Hello Python")
+
+-------------------------------
+#While loop with else
+Python allows us to use the else statement with the while loop also.
+The else clause is only executed when your while condition becomes false.
+If you break out of the loop, or if an exception is raised, it won’t be executed.
+
+i=1   
+while(i<=8):    
+    print(i)    
+    i=i+1    
+else:  
+    print("The while loop exhausted")   
+
+
+-------------------------------------
+# Python program to demonstrate
+# while-else loop
+
+i = 0
+while i < 4:
+	i += 1
+	print(i)
+else: # Executed because no break in for
+	print("No Break\n")
+
+i = 0
+while i < 4:
+	i += 1
+	print(i)
+	break
+else: # Not executed as there is a break
+	print("No Break")
+
+------------------------------------------
+
+#Break statement
+The break is a keyword in python which is used to bring the
+program control out of the loop. The break statement breaks the loops
+one by one, i.e., in the case of nested loops,
+it breaks the inner loop first and then proceeds to outer loops.
+
+#Syntax
+loop statements  
+break; 
+
+#Example
+str = "python"  
+for i in str:  
+    if i == 'o':  
+        break  
+    print(i);
+
+-------------------------------------
+#Example
+i = 0
+while 1:
+    print(i)
+    i = i+1
+    if i == 10:
+        break
+print("came out of while loop")
+
+====================================================
+#Continue Statement
+The continue statement in Python is used to
+bring the program control to the beginning of the loop.
+The continue statement skips the remaining lines of code
+inside the loop and start with the next iteration.
+Used to skip specific code for specific condition.
+Brings to program control to the beginning of the code
+skipping the remaining lines and continuing from start of the
+loop with next iteration.
+
+#Syntax
+loop statements    
+ continue  
+  the code to be skipped  
+
+#Example
+i = 0                     
+while(i < 10):                
+   i = i+1  
+   if(i == 5):  
+      continue  
+   print(i)
+
+#Example
+str = "Welcome to Python"  
+for i in str:  
+    if(i == 't'):  
+        continue  
+    print(i) 
+
+===========================================
+#Python pass Statement
+
+The pass statement is a null statement.
+But the difference between pass and comment is that comment is ignored by
+the interpreter whereas pass is not ignored.
+
+The pass statement is generally used as a placeholder i.e. when the user does not know what code to write. So user simply places pass at that line. Sometimes, pass is used when the user doesn’t want any code to execute. So user can simply place pass where empty code is not allowed, like in loops, function definitions, class definitions, or in if statements.
+
+n = 10
+for i in range(n):
+
+# pass can be used as placeholder
+# when code is to added later
+pass
+
+-------------------------------------
+a = 10
+b = 20
+
+if(a<b):
+pass
+else:
+print("b<a")
+
+
+--------------------------

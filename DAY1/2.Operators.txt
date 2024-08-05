@@ -1,0 +1,259 @@
+#Python Operators
+-------------------------------------------
+#Arithmetic Operators
+'''
++	Addition: adds two operands	
+–	Subtraction: subtracts two operands	
+*	Multiplication: multiplies two operands	
+/	Division (float): divides the first operand by the second	
+//	Division (floor): divides the first operand by the second	
+%	Modulus: returns the remainder when the first operand is divided by the second	
+**	Power: Returns first raised to power second	
+'''
+
+# Examples of Arithmetic Operator
+a = 40
+b = 25
+
+# Addition of numbers
+add = a + b
+
+# Subtraction of numbers
+sub = a - b
+
+# Multiplication of number
+mul = a * b
+
+# Division(float) of number
+div1 = a / b
+
+# Division(floor) of number
+div2 = a // b
+
+# Modulo of both number
+mod = a % b
+
+# Power
+p = a ** b
+
+# print results
+print(add)
+print(sub)
+print(mul)
+print(div1)
+print(div2)
+print(mod)
+print(p)
+
+--------------------------------------------------
+# floor division
+a = 19
+b = 3    
+
+print("The result is: ",a//b)
+
+a = 19
+b = 3.0    # if the denominator is float
+
+print("The result is: ",a//b)
+
+a = 19.4     # if the numerator is float
+b = 3    
+
+print("The result is: ",a//b)
+
+
+----------------------------------------------------
+#Comparison Operators
+
+>, < , == , != , >= , <=
+
+# Examples of Relational Operators
+a = 13
+b = 33
+
+# a > b is False
+print(a > b)
+
+# a < b is True
+print(a < b)
+
+# a == b is False
+print(a == b)
+
+# a != b is True
+print(a != b)
+
+# a >= b is False
+print(a >= b)
+
+# a <= b is True
+print(a <= b)
+
+
+-----------------------------------
+#Logical Operators
+
+#Logical and, Logical not, Logical or
+
+# Examples of Logical Operator
+a = True
+b = False
+
+# Print a and b is False
+print(a and b)
+
+# Print a or b is True
+print(a or b)
+
+# Print not a is False
+print(not a)
+
+----------------------------------
+#Bitwise Operators
+'''Bitwise operators act on bits and perform the bit-by-bit operations. These are used to operate on binary numbers.
+and = &, not = ~,or = |, Xor = ^, right shift = >>, left shift = << .'''
+
+# Examples of Bitwise operators
+a = 10
+b = 4
+
+# Print bitwise AND operation
+print(a & b)
+
+# Print bitwise OR operation
+print(a | b)
+
+# Print bitwise NOT operation
+print(~a)
+
+# print bitwise XOR operation
+print(a ^ b)
+
+# print bitwise right shift operation
+print(a >> 2)
+
+# print bitwise left shift operation
+print(a << 2)
+
+-------------------------------------------
+#Assignment Operators 
+
+# Examples of Assignment Operators
+a = 10
+
+# Assign value
+b = a
+print(b)
+
+# Add and assign value
+b += a
+print(b)
+
+# Subtract and assign value
+b -= a
+print(b)
+
+# multiply and assign
+b *= a
+print(b)
+
+# bitwise lishift operator
+b <<= a
+print(b)
+
+---------------------------------
+#Identity Operators
+'''
+is and is not are the identity operators both are used to check if two values are located on the same part of the memory. Two variables that are equal do not imply that they are identical. 
+'''
+
+a = 10
+b = 20
+c = a
+
+print(a is not b)
+print(a is c)
+
+------------------------------------
+#Membership Operators
+''' in and not in are the membership operators; used to test whether a value or variable is in a sequence. '''
+
+# Python program to illustrate
+# not 'in' operator
+x = 24
+y = 20
+list = [10, 20, 30, 40, 50]
+
+if (x not in list):
+	print("x is NOT present in given list")
+else:
+	print("x is present in given list")
+
+if (y in list):
+	print("y is present in given list")
+else:
+	print("y is NOT present in given list")
+
+----------------------------------------------
+
+#Ternary Operator
+''' Ternary operators are also known as conditional expressions are operators that evaluate something based on a condition being true or false '''
+
+# [on_true] if [expression] else [on_false] 
+
+# Program to demonstrate conditional operator
+a, b = 10, 20
+
+# Copy value of a in min if a < b else copy b
+min = a if a < b else b
+
+print(min)
+
+-------------------------------------
+# Python program to demonstrate nested ternary operator
+a, b = 10, 20
+
+print ("Both a and b are equal" if a == b else "a is greater than b"
+		if a > b else "b is greater than a")
+
+-----------------------------------------
+
+#Operator Functions in Python
+'''
+1. add(a, b) :- This functions returns addition of the given arguments.
+Operation – a + b.
+
+2. sub(a, b) :- This functions returns difference of the given arguments.
+Operation – a – b.
+
+3. mul(a, b) :- This functions returns product of the given arguments.
+Operation – a * b.
+'''
+
+# Python code to demonstrate working of
+# add(), sub(), mul()
+
+# importing operator module
+import operator
+
+# Initializing variables
+a = 4
+
+b = 3
+
+# using add() to add two numbers
+print ("The addition of numbers is :",end="");
+print (operator.add(a, b))
+
+# using sub() to subtract two numbers
+print ("The difference of numbers is :",end="");
+print (operator.sub(a, b))
+
+# using mul() to multiply two numbers
+print ("The product of numbers is :",end="");
+print (operator.mul(a, b))
+
+--------------------------------------------------
+
+
