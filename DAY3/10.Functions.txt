@@ -1,0 +1,496 @@
+def my_function():  // function declaration
+    statements  
+    return <expression>  # none
+my_function   #calling a function (function call)
+========================================================
+
+# example
+print("Writing a function")
+
+def Hello():
+	print("Hello world")
+
+# Function call
+# a function must be defined before the function calling otherwise the 
+# python interpreter gives an error
+print("Calling a function using function name")
+
+Hello()
+
+print("Function executed successfully")
+
+========================================================
+
+# when a function does not a have return expression it returns  "None"
+# Function parameters / arguments
+
+#defining the function with arguments
+print("Function with Arguments")
+
+def func(name):  
+    print("Hello",name);  
+ 
+print("Function created")
+print("Calling the function")
+print("----------------"*5) 
+#calling the function   
+func("Ayush")   
+
+=====================================================
+==============================================
+#Default argument function
+
+def display(name = 30, age = "Rohit"):  # default arguments
+    print("The name of the student is ",name)
+    print("The age of the student is ",age)
+
+print("The demo for Default argument Function")
+# taking values from the user
+a = str(input("Enter the name: "))
+b = int(input("Enter the age: "))
+print("A:",a)
+print("B:",b)
+# printing the details
+print("Calling the function")
+display(a, b)
+print("***********************"*2)
+print("Calling the function with 1 argument")
+display(a)
+print("***********************"*2)
+print("Calling the function without arguments")
+display()
+print("***********************"*2)
+print("Calling the function with 1 argument")
+display(int(b),)
+print("The code ended...")
+==================================================
+===============================================================
+
+#python function to print student details (Keyword argument)
+def display(a,b):   # Keyword arguments
+    print("The name of the student is ", a)
+    print("The age of the student is ", b)
+
+print("Function to get student details and print it..")
+# taking values from the user
+name = str(input("Enter the name: "))
+age = int(input("Enter the age: "))
+print("***********************"*2)
+
+print("Calling the function with keyword arguments")
+display(b=25, a='Virat')  # keyword argument
+print("***********************"*2)
+
+print("Calling the function with keyword and positional argument")
+display(23,b=24) # some arguments are keyword and some are not
+print("***********************"*2)
+
+# 23 is considered as positional argument and value goes to a
+print("Calling function with proper values")
+display('Rohit',20)
+print("***********************"*2)
+
+print("calling function with postional arguments after keyword argument")
+display(b=20,'Rohit')  # positional arguments should be written fist
+# display("Rohit',b=20)
+
+
+======================================
+
+# Keyword argument demo
+
+# defining the function
+def display(a=18, b="Rohit"):   # default arguments
+    print("The name of the student is %s", a)
+    print("The age of the student is %d", b)
+
+print("Function to get student details and print it..")
+# taking values from the user
+name = str(input("Enter the name: "))
+age = int(input("Enter the age: "))
+
+# printing the details
+print("Calling the function with arguments")
+display(name, age)
+display("Suresh")
+print("Calling the function with 1 argument")
+display(age)   # 1st positional argument
+# print("Calling the function without arguments")
+# display()
+print("Calling the function with keyword arguments")
+display(b="anand", a=25)
+print("Calling the function with 1 keyword arguments")
+display(b=name)
+
+=====================================================
+
+# Passing mutable Object (List)
+print("Passing the list to the function")
+# defining the function
+def update_list(num):
+    print("Inside the function")
+    print("Id for list inside func:\n ", id(num))
+    print("List inside function ",num)
+    num.append(200)
+    num.append(300)
+    print("Id for list after update:\n ", id(num))
+    print("Modified list inside function = ", num)
+
+
+# defining the list
+num = [100, 300, 400, 500]  #global
+print("The list is: ",num)
+print("Id for list:\n ",id(num))
+
+# calling the function
+print("Calling the list")
+update_list(num)
+print("list outside function = ", num)
+print("Id for list outside func:\n ",id(num))
+
+======================================================
+
+# Passing  string
+def update_string(string1):
+    print("String inside the function:\n",string1)
+    string1 = string1 + "Python is cool"
+    print("\nprinting the updated string inside function :\n", string1)
+
+
+string1 = "Python is a developer friendly."
+print("Original string:\n",string1)
+# calling the function
+print("Calling the function...")
+update_string(string1)
+
+print("\nprinting the string outside function :\n", string1)
+======================================================
+# documentation string in function
+
+def func1():
+    '''This is the function for demo'''
+
+    print('Welcome to the functions')
+
+print('This is the demo for Functions')
+func1()    # function call
+print(func1.__doc__)
+
+===============================================
+
+# Variable values inside and outside function
+
+def func1():
+    print('This is the function')
+    a = 20
+    print('Inside the function',a)
+
+
+print('This is the demo for Functions')
+print('This is the 2nd statement')
+func1()
+a = 35
+print('Outside the function',a)
+func1()
+
+================================================
+# default argument function
+def func1(name,str1 = 'This is a good day'):
+    print('This is the function')
+    print('Hello',name +','+str1)
+
+print('This is the functions demo')
+func1('Rohit','Very Good Session...')
+
+func1('Virat')    # when we dont provide the 2nd argument, while execution it takes the default
+# from the func definition
+
+===============================================
+# keyword argument function
+
+def func1(name,str1 = 'This is Python'):
+    print('This is the function')
+    print('Hello',name +','+str1)
+
+print('This is the functions demo')
+func1('Rohit','Very Good Session...')
+
+func1(name='Karan')
+func1('Virat',str1='This is Java')
+
+==================================================
+# Arbitary argument function
+
+def func1(*name):
+    print('This is the function')
+    print('Hello',name)
+
+print('This is the functions demo')
+func1('Rohit')
+
+func1('Rohit','Virat')
+func1('Suraj','Latika','Mahesh')
+
+====================================
+
+def func1(age,*name,**kwargs):   #*args   **kwargs
+    print('This is the function')
+    print('Hello',name)
+    print(type(name))
+    print(kwargs)
+    print((type(kwargs)))
+    print("Age is:",age)
+
+print('This is the functions demo')
+func1(20,'Rohit',s1=80,s2=70)
+
+# func1('Rohit','Virat')
+# func1('Suraj','Latika','Mahesh')
+========================================================
+# gobal keyword example
+# scope of variable when declared at program level(global)
+# use of global keyword
+# use global variable inside function such that i can modify it
+x ='Python'
+
+def func1():
+    global x
+    print('The value of x', x)
+    a = 'local'
+    x = x*2        # since we have used global keyword
+    print('The value of x', x)
+    print('The value of a', a)
+
+print('This is ouside function')
+func1()
+print('X outside the funct',x)
+
+#print('The value of a', a)
+
+'''
+global - used to redefine the global variable in a local scope
+use global variable insie function such that i can modify it
+
+'''
+
+=======================================================
+# Non-local keyword example
+
+def outer():
+    x = 'local'
+    print('1)x in outer',x)
+    def inner():
+        nonlocal x
+        x = 'nonlocal'
+        print('Inside inner',x)
+
+    print('2)x in outer', x)
+    inner()
+    print('3)x in outer', x)
+print('Outside the function ')
+outer()
+
+
+==================================================
+
+def outer():
+    x = 'local'    # local variable x
+    print('1)x in outer',x)
+    def inner():     # inner function
+        nonlocal x    # referencing the x from outer function
+        x = 'nonlocal'
+        print('Inside inner',x)
+
+        def inner_two():
+            nonlocal x
+            x = "Demo_done"
+            print("X inside inner_two",x)
+        inner_two()
+    print('2)x in outer', x)
+    inner()
+    print('3)x in outer', x)
+print('Outside the function ')
+outer()
+=================================================
+
+===================================================
+
+# reading multiple inputs from user
+
+a,b = [int(a) for a in input('Enter two values:').split()]
+print('First number is:',a)
+print('Second number is:',b)
+print('******'*10)
+a,b,c = [int(a) for a in input('Enter three values:').split()]
+print('First number is:',a)
+print('Second number is:',b)
+print('Third number is:',c)
+
+
+==============================================
+# Python program to display the Fibonacci sequence
+
+def recur_fibo(n):
+   if n <= 1:
+       return n
+   else:
+       return(recur_fibo(n-1) + recur_fibo(n-2))
+
+nterms = 10
+
+# check if the number of terms is valid
+if nterms <= 0:
+   print("Plese enter a positive integer")
+else:
+   print("Fibonacci sequence:")
+   for i in range(nterms):
+       print(recur_fibo(i))
+
+
+================================================
+def factorial(x):
+    """This is a recursive function
+    to find the factorial of an integer"""
+
+    if x == 1:
+        return 1
+    else:
+        return (x * factorial(x-1))
+
+
+num = 3
+print("The factorial of", num, "is", factorial(num))
+
+========================================================
+
+1.Define a function that can receive two integral numbers in
+string form and compute their sum and then print it in console.
+
+2.Define a function that can accept two strings as input and
+print the string with maximum length in console.
+If two strings have the same length, then the function should
+print al l strings line by line.
+
+3.Define a function that can accept an integer number as input
+and print the "It is an even number" if the number is even,
+otherwise print "It is an odd number".
+
+4.Define a function which can generate a dictionary where the
+keys are numbers between 1 and 20 (both included) and the values
+are square of keys. The function should just print the keys only.
+
+5.write a function that has 1 argument which excepts any number of
+values and print those values in the function.
+eg. func1(val1,val2), func(val1,val2,val3,val4)
+
+
+===========================================
+Python functions are incredibly versatile and widely used in various real-life scenarios. Here are ten practical use cases where Python functions come in handy:
+
+Data Analysis and Manipulation: Python functions are extensively used for
+data analysis tasks. They help process, clean, and manipulate data in various formats,
+such as CSV, JSON, Excel, and databases.
+
+Web Development: Python functions play a crucial role in web development, where they are used to handle HTTP requests, process form data, and generate dynamic content for web applications.
+
+Automation: Python functions are employed to automate repetitive tasks,
+such as file handling, data scraping, and batch processing.
+
+Machine Learning and Data Science: In machine learning and data science, functions help encapsulate models, data preprocessing steps, and evaluation metrics, making the code more organized and maintainable.
+
+Testing: Python functions are used in automated testing to encapsulate test
+cases and perform unit tests, ensuring the code's correctness and reliability.
+
+Game Development: Python functions are useful for game development to handle game mechanics, logic, and interactions between game elements.
+
+Image and Video Processing: Python functions are employed in image and video processing
+tasks, such as resizing, filtering, and object detection.
+
+Natural Language Processing (NLP): Functions are essential in NLP tasks to preprocess text, tokenize sentences, and perform sentiment analysis.
+
+System Administration: Python functions are used in system administration tasks to automate tasks like server management, log analysis, and network monitoring.
+
+Internet of Things (IoT): In IoT applications, functions are used to control and manage connected devices and sensors, facilitating data collection and device interaction.
+
+
+===============================================================
+1)
+print('Calling the function')
+func1('Python')
+
+def func1(name):
+    print('Hello ',name)
+
+What will be output?
+1.Error
+2.Calling the function
+Hello Python
+3.Calling the function
+Python
+Hello Python
+4.None
+
+2)
+def func1(name = 'Java'):
+    print('Hello ',name)
+
+print('Calling the function')
+func1('Python')
+
+what is the output?
+1.Error
+2.Calling the function
+Hello Python
+3.Calling the function
+Hello Java
+4.Calling the function
+Hello Python
+Hello Java
+
+3)def func1(id,*name):
+    print('The id is:',id)
+    print('The name is:',name)
+    print('Type is:',type(name))
+
+print('Calling the function')
+func1(1,'Python')
+func1(1,2,3,'Python','Java')
+
+What is output for 2nd function call?
+1.The id is: 1,2,3
+The name is: ('Python','Java')
+Type is:<class 'tuple'>
+
+2.The id is: 1
+The name is: (2,3,'Python','Java')
+Type is:<class 'tuple'>
+
+3.The id is: 1,2,3
+The name is: ('Python','Java')
+Type is:<class 'str'>
+
+4.The id is: 1
+The name is: (2,3,'Python','Java')
+Type is:<class 'str'>
+
+5)
+def func1(name,str1 = 'This is a good day'):
+    print('This is the function')
+    print('Hello',name +','+str1)
+
+print('This is the functions demo')
+func1('Rohit','Very Good Session...')
+
+func1('Virat')
+func1()
+
+What is the output for 3rd function call?
+1.Error
+2.This is the function
+Hello Virat,This is a good day
+3.This is the function
+Hello      ,This is a good day
+4.This is the function
+
+
+

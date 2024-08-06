@@ -1,11 +1,11 @@
 import requests
 
 # Oracle SSO login URL
-login_url = "https://elasticsearch-astap.oraclecorp.com/listing"
+login_url = "https://mysites.oracle.com/login"
 
 # Your SSO credentials
-username = "elastic"
-password = "elastic"
+username = "praveen.av.kumar@oracle.com"
+password = "Belcome@dec12345"
 
 # Session object to persist cookies
 session = requests.Session()

@@ -1,0 +1,196 @@
+# Writing the file
+
+# open the file.txt in write mode. Creates a new file if no such file exists.
+file1 = open("file1.txt", "w")
+
+# writing the content to the file
+print("File opened...")
+print("Writing the data to the file")
+file1.write("Machine learning is blooming technology.Python supports ML\n")
+file1.write("This is line two in file..\n")
+file1.write("This is line three in file..\n")
+file1.write('''This is line two in file.
+This is line 4 from the file.
+This is line 5 in the file.''')
+print("File updated...")
+# closing the opened file
+file1.close()
+print("File closed...")
+
+====================================================
+# open the file.txt in read mode. causes error if no such file exists.
+file1 = open("file1.txt", "r")
+print("File opened...")
+# stores all the data of the file into the variable content
+print("Reading the data from file")
+content = file1.read()
+
+# prints the type of the data stored in the file
+print(type(content))
+
+# prints the content of the file
+print("The contents from file are:")
+print(content)
+
+# closes the opened file
+file1.close()
+print("File closed...")
+
+===================================================
+# open the file.txt in read mode. causes error if no such file exists.
+file1 = open("file1.txt", "r")
+print("File opened...")
+# stores all the data of the file into the variable content
+print("Reading the data from file")
+content = file1.read(20)
+
+# prints the type of the data stored in the file
+print(type(content))
+print(len(content))
+
+# prints the content of the file
+print("The contents from file are:")
+print(content)
+
+# closes the opened file
+file1.close()
+print("File closed...")
+============================================================
+# open the file.txt in read mode. causes error if no such file exists.
+file1 = open("file1.txt", "r")
+print("File opened...")
+# stores all the data of the file into the variable content
+print("Reading the data from file")
+content = file1.readline()
+
+# prints the type of the data stored in the file
+print(type(content))
+# prints the content of the file
+print("The contents from file are:")
+print(content)
+
+# closes the opened file
+file1.close()
+print("File closed...")
+
+=====================================================
+
+# open the file.txt in read mode. causes error if no such file exists.
+file1 = open("file1.txt", "r")
+print("File opened...")
+# stores all the data of the file into the variable content
+print("Reading the data from file")
+content = file1.readline()
+
+# prints the type of the data stored in the file
+print(type(content))
+# prints the content of the file
+print("The contents from file are:")
+print(content)
+
+content = file1.readline(30)
+# prints the content of the file
+print("The contents from file are:")
+print(content)
+
+# closes the opened file
+file1.close()
+print("File closed...")
+
+===================================================
+
+# open the file.txt in read mode. causes error if no such file exists.
+file1 = open("file1.txt", "r")
+print("File opened...")
+# stores all the data of the file into the variable content
+print("Reading the data from file")
+content = file1.readlines()
+
+# prints the type of the data stored in the file
+print(type(content))
+# prints the content of the file
+print("The contents from file are:")
+print(content)
+
+content = file1.readline(30)
+# prints the content of the file
+print("The contents from file are:")
+print(content)
+
+# closes the opened file
+file1.close()
+print("File closed...")
+
+=========================================================
+
+# open the file.txt in read mode. causes error if no such file exists.
+file1 = open("file1.txt", "r")
+print("File opened...")
+# stores all the data of the file into the variable content
+print("Reading the data from file")
+
+content = file1.readline(30)  #index position
+# prints the content of the file
+print("The contents from file are:")
+print(content)
+print(len(content))
+content = file1.read(100)
+# prints the content of the file
+print("The contents from file are:")
+print(content)
+
+content = file1.readlines()
+# prints the type of the data stored in the file
+print(type(content))
+# prints the content of the file
+print("The contents from file are:")
+print(content)
+# closes the opened file
+file1.close()
+print("File closed...")
+
+======================================================
+# open the file file2.txt in read mode
+file2 = open("file1.txt", "r")
+
+# initially the filepointer is at 0
+print("The filepointer is at byte :", file2.tell())
+
+# reading the content of the file
+print("Reading the data")
+content = file2.read(20)
+# after the read operation file pointer modifies.
+
+print("After reading, the filepointer is at:", file2.tell())
+print(content)
+print("Reading the data")
+content = file2.read(20)
+# after the read operation file pointer modifies.
+print(content)
+print("After reading, the filepointer is at:", file2.tell())
+print("Reading the data")
+content = file2.read(20)
+# after the read operation file pointer modifies.
+print(content)
+print("After reading, the filepointer is at:", file2.tell())
+
+
+
+===================================================
+with open('file1.txt','r') as file1:
+    if file1:
+        print('file opened')
+        data = file1.readline()
+        print("The content is: ",data)
+        print('The cursor is at',file1.tell())
+        file1.seek(40)
+        print('The cursor is at',file1.tell())
+        data = file1.readline()
+        print("The content is: ",data)
+        file1.seek(0)
+        print('The cursor is at', file1.tell())
+        data = file1.readline(40)
+        print("The content is: ", data)
+    else:
+        print('Please check the file name')
+print('Code completed...')

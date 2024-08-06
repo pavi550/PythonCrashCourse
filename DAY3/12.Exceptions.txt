@@ -1,0 +1,252 @@
+# Program that gives error
+
+a = int(input("Enter a:"))    
+b = int(input("Enter b:"))    
+c = a/b  
+print("a/b = %d" %c)    
+    
+#other code:    
+print("This is the main program") 
+
+----------------------------------------------------
+# Handling the Error with try except block
+
+try:
+    a = int(input("Enter a:"))
+    b = int(input("Enter b:"))
+    c = a/b
+    print("The result is:",c)
+except:
+    print("Can't divide with zero")
+
+------------------------------------------------
+# Handling the Error with try except block
+try:
+   fh = open("testfile", "r")
+   fh.write("This is my test file for exception handling!!")
+except IOError:
+   print ("Error: can\'t find file or read data")
+else:
+   print ("Written content in the file successfully")
+   fh.close() 
+
+
+---------------------------------------------------
+#The except statement with no exception
+
+try:
+    a = int(input("Enter a:"))
+    b = int(input("Enter b:"))
+    c = a/b
+    print("The result is:",c)
+except:
+    print("Can't divide with zero")
+
+else:
+    print("This is else block..")
+print("\ncode ended..")
+
+---------------------------------------------------
+
+#The program with multiple Exceptions
+try:    
+    a = int(input("Enter a:"))    
+    b = int(input("Enter b:"))    
+    c = a/b;    
+    print("a/b = %d"%c)    
+except ZeroDivisionError:    
+    print("can't divide by zero") 
+except TypeError:    
+    print("This is type error")    
+else:    
+    print("This is the else block")   
+
+--------------------------------------------------
+#The catching multiple Exceptions in single block
+try:    
+    a = int(input("Enter a:"))    
+    b = int(input("Enter b:"))    
+    c = a/b;    
+    print("a/b = %d"%c)    
+except (ZeroDivisionError, TypeError, NameError):    
+    print("can't divide by zero") 
+   
+else:    
+    print("This is the else block")
+
+----------------------------------------------------
+
+----------------------------------------------
+#The except statement using with exception variable
+
+try:
+    x = int(input('Enter the first number: '))
+    y = int(input('Enter the second number: '))
+    print (x/y)
+except (ZeroDivisionError, TypeError, NameError):
+    print("This is Zero division error")
+except Exception as e:
+    print(e)
+print("Program ended")
+
+--------------------------------------------------------
+#Raising Exceptions
+
+try:    
+    age = int(input("Enter the age:"))    
+    if(age<18):    
+        raise ValueError   
+    else:    
+        print("the age is valid")    
+except ValueError:    
+    print("The age is not valid")   
+
+
+------------------------------------------------------
+
+# raise keyword an be used to call a specific Except block
+try:
+    age = int(input("Enter the age?"))
+    if age<18:
+        raise ValueError;
+    else:
+        print("The age  %a is valid"%age)
+except ZeroDivisionError:
+    print('This is divide by zero error')
+
+except NameError:
+    print('This is name error.')
+
+except ValueError:
+    print("The age %a is not valid"%age)
+
+print('This is demo for raise keyword')
+
+-----------------------------------
+
+#Raise the exception with message
+
+try:  
+     num = int(input("Enter a positive integer: "))  
+     if(num <= 0):  
+# we can pass the message in the raise statement  
+         raise ValueError("That is  a negative number!")  
+except ValueError as e:  
+     print(e)  
+ 
+-----------------------------------------------
+# Try and Finally
+
+try:
+    fileptr = open("file1.txt","r")
+    print('The file is opened...')
+    try:
+        print('Trying to write the data in file')
+        fileptr.write("Hi I am good")
+    finally:
+        print('In the inner finally block')
+        fileptr.close()
+        print("file closed")
+except:
+    print('In the except block')
+    print("Error- trying to write in file , opened for read operation")
+finally:
+     print("Final Finally block")
+print('The program ended here')
+
+-----------------------------------------------------
+
+# Custom Exception
+
+class ErrorInCode(Exception):
+    def __init__(self, data):
+        self.data = data
+
+    def __str__(self):
+        return repr(self.data)
+
+try:
+    age = int(input("Enter the age:"))
+    if(age<18):
+        raise ErrorInCode("Plz enter valid age")
+    else:
+        print("the age is valid")
+except ErrorInCode as e:
+    print("The age is not valid",e)
+-------------------------------------
+
+class Not_Allowed(Exception):
+      def __init__(self,data):
+            self.data = data
+
+
+try:
+      num1 = int(input("Enter the value for age"))
+      if (num1 < 20 or num1 > 30):
+            raise Not_Allowed("Age is not valid..")
+      else:
+            print("You are welcome to Python")
+
+
+except ZeroDivisionError as e:
+      print("The number cannot be divided..: \n",e)
+except Not_Allowed as e:
+      print("Exception :",e)
+else:
+      print("Try completed successfully...")
+finally:
+      print("Inside finally block")
+
+
+============================================
+real-life use cases of exception handling in Python:
+
+File handling:
+When reading or writing files, exceptions can occur due to
+issues like file not found, permission errors, or disk full.
+Exception handling ensures that the program can handle such
+situations and continue execution smoothly.
+
+Web scraping:
+While web scraping, a program may encounter various exceptions
+like connection errors, timeouts, or unexpected HTML structure. Exception handling helps the program to recover from these errors and continue scraping other web pages.
+
+Database operations:
+When working with databases, exceptions can arise due to
+connection errors, query problems, or constraint violations.
+Proper exception handling ensures that the database operations
+are handled gracefully.
+
+Networking:
+While developing network applications, exceptions can occur
+due to server unavailability, network errors, or incorrect
+data formats. Exception handling allows you to manage such
+scenarios and maintain the application's stability.
+
+API integration:
+When integrating with third-party APIs, exceptions can happen
+due to authentication issues, rate limiting, or API changes.
+Proper exception handling helps to handle these situations
+and provide useful feedback to users.
+
+User input validation:
+In interactive applications, exceptions can be raised due to
+invalid user input, such as incorrect data types or
+out-of-range values. Exception handling enables the
+application to prompt users for valid inputs and prevents
+crashes.
+
+Mathematical operations:
+Exception handling can be used to handle arithmetic errors like division by zero or invalid mathematical operations, ensuring that the program continues without unexpected crashes.
+
+Multithreading and multiprocessing:
+In concurrent programming, exceptions can occur in individual threads or processes. Proper exception handling allows you to capture and manage these exceptions effectively.
+
+GUI applications:
+Exception handling is valuable in graphical user interface applications to handle errors related to widgets, event handling, or external resources gracefully.
+
+Data parsing and transformation:
+While parsing data from external sources like XML, JSON, or CSV, exceptions may arise due to malformed data or missing fields. Exception handling helps to continue processing data while logging or reporting problematic entries.
+
+By implementing exception handling in these real-life scenarios, you can create robust and reliable Python applications that can handle unexpected situations gracefully, providing a better user experience and reducing the risk of crashes or data loss.
+  

@@ -1,0 +1,126 @@
+file mod1
+-------------
+#displayMsg prints a message to the name being passed.
+def displayMsg(name):
+    print("Hi "+name)
+
+def display(name):
+    print("Hi "+name)
+
+file mod2
+------------------
+import mod1
+
+print("Demo 1 for Modules")
+print("Lets import the files..")
+mod1.displayMsg('Rohit')
+print("Inside Mod2.The code ended....")
+print("Calling display function from mod1")
+mod1.display("Virat")
+
+=============================================================
+file mod1
+-------------
+#displayMsg prints a message to the name being passed.
+def displayMsg(name):
+    print("Hi "+name)
+
+def display(name):
+    print("Hi "+name)
+
+-----------------
+#file mod2
+
+from mod1 import displayMsg
+
+print("Demo 1 for Modules")
+print("Lets import the files..")
+displayMsg('Rohit')
+print("Inside Mod2.The code ended....")
+
+========================================================
+# file - mod2
+from mod1 import displayMsg
+
+print("Demo 1 for Modules")
+print("Lets import the files..")
+displayMsg('Rohit')
+print("Inside Mod2.The code ended....")
+
+def displayMsg(name):
+    print("This is function from mod2")
+    print("Hello -"+name)
+
+print("calling the displayMsg()")
+displayMsg('Supriya')          # calling func from this program
+
+from mod1 import displayMsg
+
+print("calling the displayMsg()")
+displayMsg('Anand')        # calling func from mod1
+
+
+==================================================
+# file- mod2
+
+from mod1 import displayMsg as dm
+
+print("Demo 1 for Modules")
+print("Lets import the files..")
+dm('Rohit')
+print("Inside Mod2.The code ended....")
+
+def displayMsg(name):
+    print("This is function from mod2")
+    print("Hello -"+name)
+
+print("calling the displayMsg()")
+displayMsg('Supriya')          # calling func from this program
+
+print("calling the displayMsg()")
+dm('Anand')        # calling func from mod1
+
+=======================================================
+#file -mod1
+---------------
+# displayMsg prints a message to the name being passed.
+
+def displayMsg(name):
+    print("Inside Display Message")
+    print("Hi "+name)
+
+# if main function we write the code that is to be executed by the program itself as owner
+# and not visible to the other modules/program
+def main():   # main function -
+    if __name__ == '__main__':
+        print("This is the mod1 program")
+        print(__name__)
+        displayMsg('Gautam')
+
+        def hello():
+            print("method from main program..")
+
+        hello()
+main()
+
+===================================================
+file -mod2
+------------
+import mod1    # here main method gets executed from mod1
+
+def displayMsg():
+    print("This is function from Mod2")
+    print("Welcome to python modules....")
+print("Demo 1 for Modules")
+print("Lets import the files..")
+mod1.displayMsg('Rohit')
+print("Inside Mod2.The code ended....")
+
+# def displayMsg():
+#     print("This is function from Mod2")
+#     print("Welcome to python modules....")
+displayMsg()
+mod1.displayMsg('Virat')   # trying to call function from mod1
+displayMsg()
+
+-===================================

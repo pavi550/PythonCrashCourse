@@ -1,0 +1,364 @@
+#Opening a file
+
+file object = open(<file-name>, <access-mode>)   # writing read append
+
+#opens the file file.txt in read mode  
+-------------------------------------------
+file1 = open("file.txt","r")  #open
+  
+if file1:  
+    print("file is opened successfully")  
+-------------------------------------------
+
+#Creating a new file
+
+'''The new file can be created by using one of the following access
+modes with the function open().
+x: it creates a new file with the specified name.
+It causes an error if file exists with the same name.
+
+a: It creates a new file with the specified name if no such file exists.
+It appends the content to the file if the file already exists with
+the specified name.
+
+w: It creates a new file with the specified name if no such file exists.
+It overwrites the existing file.'''
+---------------------
+# Creating new file with x mode
+print("Demo for Creating a file using X mode")
+
+f1 = open("file2.txt", "x")
+
+print("File is opened..")
+
+if f1:
+    print("File created successfully")
+print("Closing the file")
+f1.close()
+print("File closed")
+---------------------------------
+# Creating new file with x mode
+print("Demo for Creating a file using W mode")
+
+f1 = open("file3.txt", "w")
+
+print("File is opened..")
+
+if f1:
+    print("File created successfully")
+print("Closing the file")
+f1.close()
+print("File closed")
+
+---------------------------------
+# Creating new file with x mode
+print("Demo for Creating a file using A mode")
+
+f1 = open("file3.txt", "a")
+
+print("File is opened..")
+
+if f1:
+    print("File created successfully")
+print("Closing the file")
+f1.close()
+print("File closed")
+---------------------------------
+# Writing the file
+print("Demo to write the data to file")
+# open the file.txt in write mode. Creates a new file if no such file exists.
+file1 = open("file1.txt", "w")
+print("File opened...")
+# writing the content to the file
+file1.write("Machine learning is blooming technology. Python supports ML")
+print("Data written to the file")
+file1.write("\nMachine learning is blooming technology. Python supports ML")
+print("Data written to the file")
+file1.write("\nMachine learning is blooming technology. Python supports ML")
+print("Data written to the file")
+# closing the opened file
+file1.close()
+print("File closed...")
+
+---------------------------------
+#Using the read() method
+ 
+fileobj.read(<count>) 
+
+#the count is the number of bytes to be read from
+the file starting from the beginning of the file
+--------------------------------------
+# open the file.txt in read mode. causes error if no such file exists.
+print("Demo for Read operation")
+file1 = open("file1.txt", "r")
+print("File opened....")
+print("------------------"*5)
+# stores all the data of the file into the variable content
+print("Reading the data..:")
+content = file1.read(15)
+
+# prints the content of the file
+print("The data is: \n",content)
+
+# prints the type of the data stored in the file
+print(type(content))
+
+# closes the opened file
+file1.close()
+print("File closed...")
+
+
+----------------------------
+# open the file.txt in read mode. causes error if no such file exists.
+print("Demo For reading the file")
+file1 = open("file1.txt", "r")
+print("File opened")
+# stores all the data of the file into the variable content
+print("Reading the file")
+content = file1.read(10)   # reading 10 characters from the file
+# prints the type of the data stored in the file
+print(type(content))
+print("The data in the file is: \n")
+# prints the content of the file
+print(content)
+print(len(content))
+print("*******************"*2)
+print("Reading the file")
+content = file1.read(20)   # reading next 20 characters from the file
+# prints the type of the data stored in the file
+print(type(content))
+print("The data in the file is: \n")
+# prints the content of the file
+print(content)
+print(len(content))
+print("*******************"*2)
+print("Reading the file")
+content = file1.read()   # reading complete data
+# prints the type of the data stored in the file
+print(type(content))
+print("The data in the file is: \n")
+# prints the content of the file
+print(content)
+print(len(content))
+
+# closes the opened file
+file1.close()
+print("Closing the file")
+print("Code ended....")
+=====================================
+
+#Read Lines of the file using a function readline() and readlines()
+
+file1 = open("file.txt","r")   
+  
+#stores all the data of the file into the variable content  
+content = file1.readline()  
+  
+# prints the type of the data stored in the file  
+print(type(content))   
+  
+#prints the content of the file  
+print(content)   
+  
+#closes the opened file  
+file1.close() 
+--------------------
+files = open('first.txt','r')
+
+print("Opening File in Read mode")
+
+if files:
+    data=files.readlines()
+    print(data)
+else:
+    print("Please open the file in read mode")
+print("File read operation completed")
+
+files.close()
+print('File closed !')
+-------------------------------------
+
+
+file1 = open("file2.txt", "r")
+print("Reading the data using number of characters")
+content = file1.read(25)
+print(content)
+print("+++++++++++++++++++++++++++++++++")
+
+
+print("Reading the data line by line")
+content = file1.readline()
+print(content)
+print("+++++++++++++++++++++++++++++++++")
+print("Reading the data completely")
+content = file1.read()
+print(content)
+
+file1.close()
+print("File closed!")
+
+# closing the opened file
+file1.close()
+print("file closed")
+++++++++++++++++++++++++++++++++++++
+#Looping through the file
+
+file1 = open("file1.txt","r")
+
+for i in file1:
+	print(i) # here i contains each line of the file
+
+file1.close()
+print("code ended..")
+
+---------------------------------
+
+#File pointer position using tell()
+
+# open the file file2.txt in read mode  
+file2 = open("file1.txt","r")
+  
+#initially the filepointer is at 0   
+print("The filepointer is at byte :",file2.tell())  
+  
+#reading the content of the file  
+content = file2.read()  
+  
+#after the read operation file pointer modifies. 
+  
+print("After reading, the filepointer is at:",file2.tell())  
+
+-----------------------------------------
+print('This is files demo')
+
+# to handle any data or resource we need a variable
+file1 = open('filedemo1.txt','r')
+if file1:
+    print('File opened')
+    data = file1.readline()         # returns single line
+    print(data)
+    data = file1.readline(15)
+    print(data)
+    print('*******'*7)
+    data = file1.readlines()        # returns list of lines in file
+    print(data)
+    data = file1.readline()  # returns single line
+    print(data)
+else:
+    print('Please check the file name')
+file1.close()
+print('This file is closed')
+
+----------------------------------------
+with open('filedemo1.txt','w') as file1:
+    if file1:
+        print('file opened')
+        print('The cursor is at',file1.tell())
+        file1.write('''This is the first line.
+        This is the 2nd line.
+        This is the last line.''')
+        print('The cursor is at',file1.tell())
+        print('write operation completes')
+    else:
+        print('Please check the file name')
+print('Code completed...')
+
+------------------------------------------------------
+
+print('This is files demo')
+# to handle any data or resource we need a variable
+#
+with open('filedemo1.txt','r') as file1:
+    if file1:
+        print('file opened')
+        data = file1.readline()
+        print('The cursor is at',file1.tell())
+        file1.seek(40)
+        print('The cursor is at',file1.tell())
+    else:
+        print('Please check the file name')
+print('Code completed...')
+
+-------------------------------------------------
+with open('file1.txt','r') as file1:
+        print('file opened')
+        print('The cursor is at',file1.tell())
+        data = file1.read(20)
+        print("The data is: ",data)
+        print('The cursor is at', file1.tell())
+        file1.seek(5)
+        print('The cursor is at', file1.tell())
+        data = file1.read(20)
+        print("The data is: ", data)
+        print('The cursor is at', file1.tell())
+        file1.seek(75)
+        print('The cursor is at', file1.tell())
+        data = file1.read(50)
+        print("The data is: ", data)
+        print('The cursor is at', file1.tell())
+        print('write operation completes')
+print('Code completed...')
+---------------------------------------------------------------------
+step1) install library
+>pip3 install PyPDF2
+
+# importing required modules
+import PyPDF2
+
+# creating a pdf file object
+file1 = open('pythonfiles.pdf', 'rb')  #read in binary
+
+# creating a pdf reader object
+pdfReader = PyPDF2.PdfFileReader(file1)
+
+# printing number of pages in pdf file
+print(pdfReader.numPages)
+
+# creating a page object
+pageObj = pdfReader.getPage(1)
+
+# extracting text from page
+print(pageObj.extractText())
+
+# closing the pdf file object
+file1.close()
+===================================================
+
+Wap to read the number of characters in a file.
+Wap to read data from one file and write the same to other file
+wap to print only the numbers from the file on screen
+wap to print only characters (excluding numbers) from file
+wap to print total number of lines in a file
+wap to print the data in reverse order from the file
+wap to count number of times letter 'x' appers in the file
+wap to count total blank spaces in the file
+wap to print every word in file with initial capital letter
+
+
+===============================================
+Implementations of Python File handing
+
+Reading and Writing Text Files: The most common use case is reading from and writing to text files. For example, reading data from a CSV file, parsing log files, or writing configuration settings to a text file.
+
+Data Persistence: Storing and retrieving data in a structured manner using file handling. For instance, saving user preferences or game progress to a file, and later loading it back when the application restarts.
+
+Parsing and Extracting Information: Processing files with structured data formats, such as JSON, XML, or YAML, to extract relevant information or perform data manipulation tasks.
+
+Handling Configuration Files: Reading and modifying configuration files that store settings and options for applications, allowing users to customize the behavior of the program.
+
+Logging: Writing log data to files, allowing developers to track and analyze the behavior of an application, diagnose errors, and identify performance issues.
+
+Backup and Restore: Creating backups of critical data or application states by writing them to files, and later restoring them when needed.
+
+Reading and Writing Binary Files: Dealing with non-text files like images, audio, video, or any binary data that requires specialized handling.
+
+Web Scraping and Data Mining: Saving scraped data from websites into files for further analysis, reporting, or data processing.
+
+Generating Reports: Collecting data from various sources, processing it, and creating reports in a readable format, such as PDF or Excel, by writing to files.
+
+Encryption and Decryption: Reading encrypted data from a file, decrypting it, and vice versa, providing secure storage and transmission of sensitive information.
+
+In each of these use cases, Python's file handling capabilities, including open(), read(), write(), close(), and various other methods provided by the file objects, play a vital role in efficiently working with files.
+
+
+

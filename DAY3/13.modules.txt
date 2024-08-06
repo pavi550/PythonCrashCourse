@@ -1,0 +1,375 @@
+1)when creating the modules, use the main method.write the code to be executed as the (owner)
+main program inside this main method. this code will not be visible for other programs/modules.
+2)when we import a module using import statement, we need to use the modulename.function name
+syntax to access the functions from module.
+3) when we import the modules using "from module import func1,func2...", we dont need to mention
+the module name to access the functions from our (imported)module.
+4)when we import the module as 'from module import func1..', and if we have same function in the
+other program, then the latest definition available in program will be accessed.
+
+
+create the module named as file.py.
+
+#displayMsg prints a message to the name being passed.   
+def displayMsg(name)  
+    print("Hi "+name)
+
+-------------------------------------------------
+file: mod1
+# displayMsg prints a message to the name being passed.
+
+def displayMsg(name):
+    print("Inside Mod1")
+    print("Hi "+name)
+-------------------------------------------------
+file-mod2
+import mod1
+
+print("Demo 1 for Modules")
+print("Lets import the files..")
+mod1.displayMsg('Rohit')
+print("Inside Mod2.The code ended....")
+=================================================================
+#if we need to call the function displayMsg() defined in the file file.py,
+ we have to import that file as a module into our module
+
+import file;  
+name = input("Enter the name?")  
+file.displayMsg(name)   
+
+---------------------------------------
+calculation.py:
+
+#place the code in the calculation.py   
+def summation(a,b):  
+    return a+b  
+def multiplication(a,b):  
+    return a*b;  
+def divide(a,b):  
+    return a/b;  
+
+------------------------------------------
+Main.py:
+
+
+from calculation import summation    
+#it will import only the summation() from calculation.py  
+a = int(input("Enter the first number"))  
+b = int(input("Enter the second number"))  
+print("Sum = ",summation(a,b)) #we do not need to specify the module name while accessing summation()  
+
+
+-----------------------------------------------
+# Renaming a module while import
+
+import calculation as cal;  
+a = int(input("Enter a?"));  
+b = int(input("Enter b?"));  
+print("Sum = ",cal.summation(a,b))  
+
+---------------------------------------------
+Using dir() function
+The dir() function returns a sorted list of names defined in the passed module. This list contains all the sub-modules, variables and functions defined in this module.
+
+import json  
+  
+List = dir(json)  
+  
+print(List)  
+
+
+------------------------------------------------
+Python packages
+
+The packages in python facilitate the developer with the application development environment by providing a hierarchical directory structure where a package contains sub-packages, modules, and sub-modules. The packages are used to categorize the application level code efficiently.
+
+Let's create a package named Employees in your home directory. Consider the following steps.
+
+1. Create a directory with name Employees on path /home.
+
+2. Create a python source file with name ITEmployees.py on the path /home/Employees.
+
+------------------------------------------
+ITEmployees.py
+
+def getITNames():  
+    List = ["John", "David", "Nick",    "Martin"]  
+    return List;  
+
+
+--------------------------------------------------------
+3. Similarly, create one more python file with name BPOEmployees.py and create a function getBPONames().
+
+4.To use the modules defined inside the package Employees, we must have to import this in our python source file
+
+------------------------------------------------------
+Test.py
+
+import Employees  
+print(Employees.getNames())  
+
+---------------------------------------------
+file : mod1
+# displayMsg prints a message to the name being passed.
+
+print("This is the demo for modules")
+def displayMsg(name):
+    print("Inside Mod1")
+    print("Hi ",name)
+
+print("Calling func")
+displayMsg("Rohit")
+
+def displayMsg(name):
+    print("This is display function 2")
+    print("Hi ",name)
+
+def displayMsg(name):
+    print("This is display function 3")
+    print("Hi ",name)
+
+
+displayMsg("Dhoni")
+print("Code ended...")
+
+==========================================
+file :mod2
+
+import mod1 as md
+
+print("Demo 1 for Modules")
+print("Lets import the files..")
+md.displayMsg('Rohit')
+
+print("Inside Mod2.The code ended....")
+
+
+====================================================
+file: mod1
+# displayMsg prints a message to the name being passed.
+
+def displayMsg(name):
+    print("Inside Display Message")
+    print("Hi "+name)
+
+# if main function we write the code that is to be executed by the program itself as owner
+# and not visible to the other modules/program
+def main():   # main function -
+    if __name__ == '__main__':
+        print("This is the mod1 program")
+        print(__name__)
+        displayMsg('Gautam')
+
+        def hello():
+            print("method from main program..")
+
+        hello()
+main()
+=====================================
+
+file:mod2
+# importing mod1 here in mod2
+
+import mod1    # here main method gets executed from mod1
+# from mod1 import displayMsg
+
+def displayMsg():
+    print("This is function from Mod2")
+    print("Welcome to python modules....")
+print("Demo 1 for Modules")
+print("Lets import the files..")
+mod1.displayMsg('Rohit')
+print("Inside Mod2.The code ended....")
+
+# def displayMsg():
+#     print("This is function from Mod2")
+#     print("Welcome to python modules....")
+displayMsg()
+mod1.displayMsg('Virat')   # trying to call function from mod1
+displayMsg()
+
+
+=================================================================
+file :mod2
+
+# importing mod1 here in mod2
+
+# import mod1    # here main method gets executed from mod1
+from mod1 import displayMsg
+
+def displayMsg():
+    print("This is function from Mod2")
+    print("Welcome to python modules....")
+print("Demo 1 for Modules")
+print("Lets import the files..")
+displayMsg()
+print("Inside Mod2.The code ended....")
+
+from mod1 import displayMsg
+print("Imported the module mod")
+# displayMsg()
+displayMsg('Virat')
+displayMsg()
+displayMsg('Virat')   # trying to call function from mod1
+displayMsg()
+
+-----------------------------------------------
+file :mod3
+
+def Mod():
+    print("This is mod function from module 3")
+
+
+-----------------------------------------------
+file :mod1
+
+# displayMsg prints a message to the name being passed.
+
+def displayMsg(name):
+    print("Inside Display Message")
+    print("Hi "+name)
+
+# if main function we write the code that is to be executed by the program itself as owner
+# and not visible to the other modules/program
+def main():   # main function -
+    if __name__ == '__main__':
+        print("This is the mod1 program")
+        print(__name__)
+        displayMsg('Gautam')
+
+        def hello():
+            print("method from main program..")
+
+        hello()
+        import mod3    #inside if block
+        print("Just imported Mod3 in main function...")
+        print("Calling function from mod3")
+        mod3.Mod()
+        print("Back from mod3 to main function")
+    print("Calling Mod function from main function block")
+    mod3.Mod()
+main()
+print("Calling the mod3 from default main...")
+mod3.Mod()
+
+=======================================================
+#file: mod1
+# displayMsg prints a message to the name being passed.
+
+def displayMsg(name):
+    print("Inside Mod1")
+    print("Hi "+name)
+
+def main():
+    print("This is main method from mod1")
+    if __name__ == '__main__':  # this code is for self mode, executed only by self
+        print("This is the mod1 program")
+        print(__name__)
+        displayMsg('Gautam')  #
+
+        def hello():
+            print("method from main program..")
+
+        hello()
+        print("Last line from if block")
+    return 1
+main()
+# it will act as module
+# it will be simple program
+
+----------------------------------------------
+from mod1 import displayMsg,main
+# regular program using code from other module
+
+print("Demo 1 for Modules")
+print("Lets import the files..")
+displayMsg('Rohit')
+print("Inside Mod2.The code ended....")
+
+def displayMsg(name):
+    print("Inside Mod2 file")
+    print("Hello "+name)
+
+print("Function created")
+displayMsg('Rahul')
+print(__name__)
+print("*************************************************")
+print("calling the main method")
+print(main())
+
+============================================
+packages
+===========
+# create a package names EMP
+
+# inside EMP create a python file Sales
+#file Sales.py
+def display():
+    print("This is display method from sales")
+
+def Sales_rpt():
+    print("This is report from sales")
+
+----------------------------
+# create python file Finance
+#Finance.py
+
+def display():
+    print("This is display method from finance")
+
+
+def Finance_rpt():
+    print("This is report from finance")
+
+----------------------------
+#create a python file app
+#file app.py
+import Emp.Sales
+import Emp.Finance
+
+print("Calling from Sales")
+Emp.Sales.display()
+
+print("Calling from Finance")
+Emp.Finance.display()
+
+from Emp.Sales import display,Sales_rpt
+
+print("Calling from Sales")
+display()
+Sales_rpt()
+
+import Emp.Sales as sales
+
+print("Calling from Sales")
+sales.display()
+
+# execute app.py
+==============================================
+
+
+
+--------------------------------------------------------------
+real-life use cases for modules and packages in Python:
+
+Web Development: In web development, Python modules and packages are used to handle various aspects, such as handling HTTP requests and responses, database connections, form processing, authentication, and user sessions.
+
+Data Analysis and Science: Modules and packages like NumPy, Pandas, and SciPy are commonly used for data analysis, manipulation, and scientific computing tasks. They provide optimized functions and data structures for handling large datasets.
+
+Machine Learning: Python's popular machine learning libraries, like Scikit-learn and TensorFlow, are packaged as modules, allowing developers to build and train machine learning models efficiently.
+
+GUI Applications: Packages like Tkinter and PyQT enable the creation of graphical user interfaces (GUI) for desktop applications. They help design and manage windows, buttons, menus, and other interface elements.
+
+Testing and Quality Assurance: Python's testing frameworks, such as unittest and pytest, are used to create test suites and test cases. These testing modules are essential for ensuring code correctness and maintaining quality.
+
+Automation: Modules and packages in Python facilitate automation tasks. They allow developers to interact with the operating system, handle files, and automate repetitive tasks effectively.
+
+Networking: Python's built-in modules like socket enable network programming. They allow developers to create networking applications, handle sockets, and communicate over the internet.
+
+Data Visualization: Libraries like Matplotlib and Seaborn are popular for data visualization. They are used to create charts, graphs, and plots to present data in a visually appealing manner.
+
+Natural Language Processing (NLP): NLP tasks are simplified using modules like NLTK (Natural Language Toolkit) and SpaCy. These packages offer functionalities like tokenization, part-of-speech tagging, and named entity recognition.
+
+Game Development: Python's Pygame package is used to create 2D games. It provides modules for handling game graphics, audio, input events, and game logic.
+
+These use cases highlight the versatility and importance of modules and packages in Python for a wide range of applications and domains. They make it easier to build complex systems and applications by breaking them down into smaller, manageable components.
