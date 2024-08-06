@@ -267,7 +267,7 @@ print(set1)
 
 What will be the output?
 1.we get proper set values printed
-2.Error
+2.Error ==
 
 2)
 set1 = {1,2,3,3,99,6,44,81,2,3,1}
@@ -276,7 +276,7 @@ set1.discard(3)
 print(set1)
 
 What will be the output?
-1.we get proper set values printed
+1.we get proper set values printed ==
 2.Error
 
 3)
@@ -286,7 +286,7 @@ set1.discard(33)
 print(set1)
 
 What will be the output?
-1.unchanged set will be printed with all values
+1.unchanged set will be printed with all values =
 2.Error
 3.set will get printed removing 33 value
 
@@ -299,7 +299,7 @@ print(set1)
 
 What will be the output?
 1.unchanged set will be printed with all values
-2.Error
+2.Error =
 3.set will get printed removing 33 value
 
 5)
@@ -312,6 +312,6 @@ print(set1)
 what is the output?
 
 1.It prints the set values after removing 'Five'
-2.Code gives Error
+2.Code gives Error  =
 3.discard has no effect and set printed unaffected
 4.discard function gives KeyError
