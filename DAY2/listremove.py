@@ -1,0 +1,21 @@
+# Removing the element remove() method
+list3 = [1,2,3,"Pune","Mumbai",764,332,22,"Delhi"] # list of mixed elements
+print("The Third List we have is: ",list3)
+list3.append(302)
+list3.append("Latur")
+print("Modified list is:",list3)
+print("************"*4)
+# Removing the element remove() method
+print("Trying to delete the elements from the list")
+list3.remove(332)
+print("************"*4)
+print("The list after removing the element is: ")
+print(list3)
+list3.remove("Delhi")
+print("************"*4)
+print("The list after removing the element is: ")
+print(list3)
+list3.remove(22)
+print("************"*4)
+print("The list after removing the element is: ")
+print(list3)
