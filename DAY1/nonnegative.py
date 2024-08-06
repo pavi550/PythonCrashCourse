@@ -2,8 +2,8 @@
 str =input ("Enter string to be printed : ")
 n=int(input("Enter no of time it has to print : "))
 if n <0 :
-       print("Number is negative no:", n)
-
+    print("Number is negative no:", n)
+    break
 
 def mul(n,str) :
     result= str * n
