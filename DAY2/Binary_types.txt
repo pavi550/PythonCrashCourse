@@ -1,0 +1,76 @@
+
+The bytearray type is a mutable sequence of integers in the range between 0 and 255. It allows you to work directly with binary data. It can be used to work with low-level data such as that inside of images or arriving directly from the network.
+
+Bytearray type inherits methods from both list and str types.
+
+prime_numbers = [2, 3, 5, 7]
+
+# convert list to bytearray
+byte_array = bytearray(prime_numbers)
+print(byte_array)
+
+=================================
+
+Python bytes() function is used to convert an object to an
+immutable (cannot be modified) byte object of the given size
+and data. The Python bytes() function returns a byte's object,
+which is an immutable series of integer numbers ranging from 0 to 256.
+
+
+txt = 'Hello World'
+arr = bytes(txt, 'utf-8')
+print(arr)
+print('')
+
+# source string without other parameters
+string = 'Welcome Home'
+arr2 = bytes(string)
+# as there are no other parameters specified,it will throw TypeError
+print(arr2)
+
+#How many bytes is a string in Python?
+#Each character of a string is allocated memory space
+#of 1 byte in Python.
+
+
+mytext = 'Python'
+
+x = len(mytext.encode('utf-8'))
+print('Length of string in Bytes:', x)
+
+
+=================================
+Python memoryview() function returns the memory views objects.
+
+As Memory view is a safe way to expose the buffer protocol in
+Python and a memoryview behaves just like bytes in many useful
+contexts (for example, it supports the mapping protocol) so it
+provides an adequate replacement if used carefully.
+
+Buffer protocol provides a way to access the internal data
+of an object. This internal data is a memory array or a buffer.
+
+memoryview objects allow Python code to access the internal data
+of an object that supports the buffer protocol without copying.
+The memoryview() function allows direct read and write access
+to an object’s byte-oriented data without needing to copy it first.
+That can yield large performance gains when operating on large
+objects since it doesn’t create a copy when slicing.
+
+# Python program to illustrate
+# Modifying internal data using memory view
+
+# random bytearray
+byte_array = bytearray('XYZ', 'utf-8')
+print('Before update:', byte_array)
+
+mem_view = memoryview(byte_array)
+
+# update 2nd index of mem_view to J
+mem_view[2] = 74
+print('After update:', byte_array)
+
+
+
+
+

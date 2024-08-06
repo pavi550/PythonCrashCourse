@@ -1,0 +1,376 @@
+# Data structures -- collection in python
+# List- Heterogeneous collection of elements enclosed within a pair of square brackets separated
+ by comma. Mutable object.Index is available to traverse the list.
+ slicing can also be done.
+
+
+print("The demo for the List")
+list1 = [1,2,34,5,6,7,8,9]  # list of numbers
+print("The List we have is: ",list1)
+
+print("The element from the list is: ",list1[0])
+print("The element from the list is: ",list1[1])
+print("The element from the list is: ",list1[2])
+print("The element from the list is: ",list1[3])
+
+list2 = ["Nashik","Khalapur","Pune","Mumbai"]  # list of String
+print("The second List we have is: ",list2)
+
+print("The element from the list is: ",list2[2])
+print("The element from the list is: ",list2[1])
+print("The element from the list is: ",list2[0])
+print("The element from the list is: ",list2[3])
+
+list3 = [1,2,3,"Pune","Mumbai",764,332,22,"Delhi"] # list of mixed elements
+print("The Third List we have is: ",list3)
+
+print("The element from the list is: ",list3[3])
+print("The element from the list is: ",list3[1])
+print("The element from the list is: ",list3[6])
+print("The element from the list is: ",list3[7])
+
+print(type(list1))
+
+list2 = ["Nashik","Khalapur","Pune","Mumbai"]
+print("The type of the list :",type(list2))
+
+------------------------------------------------------
+
+emp = ["Rohit",1001,"Nashik"]
+Dept1 = ["Sales",10]
+Dept2 = ["Production",20]
+HOD = [10,"Mr.Swami"]
+HOD_IT = [20,"Mr.Ganesh"]
+print("printing employee data...")
+print("Name : %s, ID: %d, Country: %s"%(emp[0],emp[1],emp[2]))
+print("printing departments...")
+print("Department 1:\nName: %s, ID: %d\nDepartment 2:\nName: %s, ID: %s"%(Dept1[0],Dept1[1],Dept2[0],Dept2[1]))
+print("HOD Details ....")
+print("CS HOD Name: %s, Id: %d"%(HOD[1],HOD[0]))
+print("IT HOD Name: %s, Id: %d"%(HOD_IT[1],HOD_IT[0]))
+print(type(emp),type(Dept1),type(Dept2),type(HOD),type(HOD_IT))
+
+-------------------------------------------------------
+mylist = [ ['Virat' ,90],['Rohit',85],30]
+
+print(mylist [0],mylist[1],mylist[2])
+print("*****"*5)
+print('mylist [0][0]: ',mylist [0][0])
+print("*****"*5)
+print('mylist[1][0]: ',mylist[1][0])
+print("*****"*5)
+print(mylist [0][0][3]+mylist[1][0][2])
+print("*****"*5)
+print((mylist [0][1] + mylist[1][1])/ mylist[2])
+
+
+---------------------------------------------------  
+
+list2 = ["Nashik","Khalapur","Pune","Mumbai"]  # list of String
+print("The second List we have is: ",list2)
+
+# Updating the elements
+print("The original list is: ",list2)
+print("Trying to update the list elements")
+list2[2]="Jaipur"
+print("The modified list is: ",list2)
+
+print("Trying to update the list elements")
+list2[0]="Delhi"
+print("The modified list is: ",list2)
+
+
+--------------------------------------------
+
+# Adding elements to list using append()
+list1 = [1,2,34,5,6,7,8,9]  # list of numbers
+print("The List we have is:\n ",list1)
+list1.append(201)
+print("Modified list is:\n",list1)
+print("*************"*3)
+list2 = ["Nashik","Khalapur","Pune","Mumbai"]
+print("The List we have is: \n",list2)
+list2.append("Jabalpur")
+print("Modified list is:\n",list2)
+print("*************"*3)
+list3 = [1,2,3,"Pune","Mumbai",764,332,22,"Delhi"] # list of mixed elements
+print("The Third List we have is:\n ",list3)
+list3.append(302)
+list3.append("Latur")
+print("Modified list is:\n",list3)
+
+-----------------------------------------------------
+# Adding the element at a position
+list1 = [1,2,34,5,6,7,8,9]  # list of numbers
+print("The List we have is:\n ",list1)
+# Adding the element at a position
+print("element at index:\n ",list1[3])
+list1.insert(3,201)
+print("Modified list is:\n",list1)
+
+
+print("*************"*3)
+list2 = ["Nashik","Khalapur","Pune","Mumbai"]
+print("The List we have is:\n ",list2)
+print("element at index:\n ",list2[2])
+list2.insert(2,"Kolkata")
+print("Modified list is:\n",list2)
+
+
+
+
+======================================================
+#Removing the element using del
+print('Removing elements using del()')
+list1 = [1,2,34,5,6,7,8,9]  # list of numbers
+print("The List we have is:\n ",list1)
+print("element at index: ",list1[1:3])
+del list1[1:3]  # 1,2
+print("Modified list is:\n",list1)
+
+print("*************"*3)
+list2 = ["Nashik","Khalapur","Pune","Mumbai"]
+print("The List we have is: \n",list2)
+print("element at index:\n ",list2[0])
+del list2[0]
+print("Modified list is:\n",list2)
+print("*************"*3)
+print("The List we have is:\n ",list1)
+print("Deleting the entire list")
+del list1
+print("List deleted...")
+#print("The List we have is:\n ",list1)
+=================================================
+# Removing the element remove() method
+list3 = [1,2,3,"Pune","Mumbai",764,332,22,"Delhi"] # list of mixed elements
+print("The Third List we have is: ",list3)
+list3.append(302)
+list3.append("Latur")
+print("Modified list is:",list3)
+print("************"*4)
+# Removing the element remove() method
+print("Trying to delete the elements from the list")
+list3.remove(332)
+print("************"*4)
+print("The list after removing the element is: ")
+print(list3)
+list3.remove("Delhi")
+print("************"*4)
+print("The list after removing the element is: ")
+print(list3)
+list3.remove(22)
+print("************"*4)
+print("The list after removing the element is: ")
+print(list3)
+
+-----------------------------------------------------
+list1 = [1,2,34,5,6,7,8,9]  # list of numbers
+print("The List we have is: ",list1)
+# add multiple elements
+print("Length ",len(list1))
+print('list1[2:5]: ',list1[2:5])
+list1[2:5]=[12,34,30,20,25,15,25]  # reassigning  list1[2] = 5
+print("Modified list is: ",list1)
+print("Length ",len(list1))
+print("***********"*4)
+list1[:] = [1,2,3,4]   # recreating the list list1 = [1,2,3,4]
+print("Modified list is: ",list1)
+print("***********"*4)
+print("Adding multiple elements at once using extend()")
+list1.extend([3,4,5,6])
+print("Modified list is: ",list1)
+print("***********"*4)
+print("Adding list within a list")
+list1.append([3,4,5,6])
+print("Modified list is: ",list1)
+print("***********"*4)
+list1.append(40)
+print("Modified list is: ",list1)
+
+----------------------------------------------------
+# Deleting the element
+list1 = [1,2,34,5,6,7,8,9]  # list of numbers
+print("The List we have is: ",list1)
+#
+print("Length ",len(list1))
+print('list1[2:5]: ',list1[2:5])
+del list1[2:5]  # del takes the index
+print("Modified list is: ",list1)
+print("Length ",len(list1))
+print("***********"*4)
+print("Modified list is: ",list1)
+print("removing element using pop()")
+list1.pop()   # removes the last element
+print("Modified list is: ",list1)
+print("***********"*4)
+print("removing element using pop(index)")
+list1.pop(2)   # removes the element at index
+print("Modified list is: ",list1)
+print("***********"*4)
+list1.append([2,13,43,55])
+print("Modified list is: ",list1)
+print(list1[3])
+list1[3].pop(2)
+print("Modified list is: ",list1)
+print("***********"*4)
+print("Clearing the list elements")
+list1.clear()   # used to clear the list
+print("Modified list is: ",list1)
+
+---------------------------------------------------
+#Slicing the List
+
+str1 = 'Programming'
+
+list1 = list(str1)
+print(list1)
+
+print(list1[2:6])  # 2 to 5 index
+
+print(list1[5:])   # from 5 to last
+
+print(list1[-3:]) # last 3 elements
+
+print(list1[::2])   # alternate elements
+
+print(list1[::-1])  # reverse
+
+list1.reverse()   # when reverse is applied the method returns None
+print(list1)
+
+----------------------------------------------------
+str1 = 'programming'
+
+list1 = list(str1)    # converting string to list
+print(list1)
+
+list1.sort()
+print(list1)
+
+str1 = str(list1)
+print(str1)
+str1 = ''.join(list1)
+print(str1)
+
+--------------------------------
+# Generating the list using the for loop
+number = [x+6 for x in [1,2,3,4,5]]  
+print("The list is: ",number)
+
+# creating a list using for loop and range function
+number = [x+6 for x in range(2,12)]
+print("The list is: ",number)
+
+number = [x for x in range(2,12)]
+print("The list is: ",number)
+
+====================================================
+
+# Printing and Searching for the element in the
+#list using for loop
+
+list3 = [1,2,3,"Pune","Mumbai",764,332,22,"Delhi"]
+for element in list3:
+    print(element)
+
+if "Pune" in list3:          # Membership operator
+    print("The element exists in your list")
+else:
+    print("element does not match")
+
+==================================
+
+# print the list in reverse order  [::-1][start:last:step]
+# print the odd numbers from the list[::] odd index
+# print the even numbers from list [::]  even index
+# Print the first item of the list 1, 4, 7
+# print the last item of the list
+# Print student details-- create a list of students, add students, remove students
+# create a list of course-- append,insert,remove,del and pop
+# create a list of Faculty
+# list of departments
+# perform operations - Add element(append), add element at a position,
+delete element using del,pop,remove, clear the list using clear(),
+slice the list.
+student=["Virat",20,"Pune","Computers",87]
+
+
+=================================================
+Implementations of List (mutable)
+
+To-Do Lists:
+Keeping track of tasks and creating to-do lists can be efficiently managed using Python lists.
+
+Shopping Lists:
+Lists are commonly used to create and manage shopping lists for groceries or other items.
+
+Student Rosters:
+In educational institutions, lists can be used to store student names, grades, and other relevant information.
+
+Inventory Management:
+Python lists are employed to maintain inventory records in businesses, including stock items, quantities, and prices.
+
+Contact Lists:
+Lists are used in contact management applications to store names, phone numbers, and emails.
+
+Data Analysis:
+Lists are fundamental data structures used in data analysis and statistical computations.
+
+Social Media Posts:
+Social media platforms use lists to store posts, comments, and user interactions.
+
+Task Scheduling:
+Python lists are helpful in managing scheduled tasks and events.
+
+Gaming:
+Lists are used to represent game states, scores, and player inventories in gaming applications.
+
+Weather Forecasting:
+In meteorology, lists are used to store temperature, humidity, and other weather-related data points.
+
+
+===================================================
+
+1)
+list1 = [1,2,34,5,6,7,8,9]  # list of numbers
+
+del list1[2:5]
+print("Modified list is: ",list1)
+
+What statement is Correct?
+1.List is printed after deleting 34,5,6 elements
+2.Error as we cannot delete elements from list
+3.Error for syntax with del, it takes only 1 value
+4.Del cannot be used with list
+
+2)list1 = [1,2,[34,5,6],7,(8,9),23]  # list of numbers
+
+list1[4].remove(8)
+print("Modified list is: ",list1)
+What statement is true?
+1.remove deletes the element from tuple in list
+2.We cannot delete element from nested tuple
+3.Remove does not takes argument
+4.List is immutable object
+
+3)list1 = [1,2,34,5,6,7,8,9]  # list of numbers
+
+list1[2:6]=[12,34,30,20,25,15,25]
+print(list1)
+
+What happens at line 2?
+1.Line 2 adds all elements to the list at the end
+2.Line 2 give Error
+3.Line 2 adds only 4 elements to the list at the end
+4.Line 2 substitues the elements in range 2:6 with new elements
+
+4)list1 = [1,2,34,2,5,6,7,8,2,9]  # list of numbers
+
+list1.remove(2)
+print(list1)
+
+What does line 2 results in?
+1.It removes all occurances of 2 from list
+2.Removes onle 1st occurrance of 2 from list
+3.Remove does not take argument
+4.Gives Error

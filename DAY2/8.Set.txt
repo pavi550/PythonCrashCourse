@@ -1,0 +1,317 @@
+Python Set  {}
+---------------------
+# unordered collection of various items enclosed within the curly braces.
+# The elements of the set can not be duplicate. 
+# The elements of the python set must be immutable.(tuple,int,string,float)
+# no index attached to the elements of the set, we cannot
+# directly access any element of the set by the index.
+# Set is an mutable object
+
+--------------
+Days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}  
+print("The set is:\n",Days)
+print(type(Days))  
+print("looping through the set elements ... ")  
+for i in Days:  
+    print(i)  
+
+--------------------------------------------------
+
+set1 = {1,2,3,44,5,6}
+print("The set is: ",set1)  #
+print(type(set1))
+
+-------------------------------
+ 
+Converting list into set
+=======================
+list1 = [2,3,4,1,5,1,2,3,4,5]
+print("The list is: ",list1)
+print("--------------"*4)
+print("converting list into set.")
+set2 = set(list1)
+print("The set is: ",set2)
+print("--------------"*4)
+print("Adding elements to the set")
+set2.add(23)    # adding single elements
+print("Updated set is: ",set2)
+print("--------------"*4)
+print("Adding multiple values to the set.")
+set2.update([12,13,14])   # adding multiple elements
+print("Updated set is: ",set2)
+print("--------------"*4)
+
+--------------------------------------------
+-------------------
+
+print("Converting a list to set")
+number = set(["One","Two","Three"])
+print(number)
+print(type(number))
+
+------------------------------------------
+number = {'Two', 'Three', 'One'}
+print("The set is: ",number)
+print("Adding elements to the set")
+number.add("Five")
+number.add("Seven")
+print("--------------"*4)
+print("Adding multiple elements using Update()")
+number.update(["Six","Eight","Nine"])
+print(number)
+print("--------------"*4)
+print("removing the Elements using 'discard()'")
+number.discard("Eight")
+print(number)
+print("--------------"*4)
+print("removing the Elements using 'remove()'")
+number.remove("Nine")
+print(number)
+print("--------------"*4)
+print("Removing all the items from the set...")
+number.clear()
+print(number)
+
+------------------------------------------------
+
+# Adding multiple elements to the set
+
+set1 = {1,2,3,3,99,6,44,81,2,3,1}
+print("The set is: ",set1)
+set1.update({77,54,65,33})
+print("The modified set is: ",set1)
+print("--------------------"*4)
+
+set1.discard(3)
+print("The modified set after discard(): ",set1)
+print("--------------------"*4)
+
+set1.discard(100)
+print("The modified set after discard(): ",set1)
+print("--------------------"*4)
+
+set1.remove(2)
+print("The modified set after remove(): ",set1)
+# set1.remove(100)
+# print(set1)
+
+--------------------------------------------------
+
+# Adding multiple elements to the set
+
+set1 = {1,2,3,3,99,6,44,81,2,3,1}
+print("The set is: ",set1)
+set1.update({77,54,65,33})
+print("The modified set is: ",set1)
+print("--------------------"*4)
+
+set1.pop()
+print("The modified set after pop(): ",set1)
+print("--------------------"*4)
+
+set1.discard(99)
+print("The modified set after discard(): ",set1)
+print("--------------------"*4)
+
+set1.pop()
+print("The modified set after pop(): ",set1)
+print("--------------------"*4)
+
+set1.pop()
+print("The modified set after pop(): ",set1)
+
+-------------------------------------------
+
+day1 = {"One","Two","Three","Four"}
+day2 = {"Five","Six","Seven"}
+
+print("Day1 set: ",day1)
+print("Day2 set: ",day2)
+print("------------------"*4)
+
+# Union of the both the sets
+print("Union of Day1 and Day2")
+print("day1|day2 :\n ",day1|day2)
+print("------------------"*4)
+print("day1.union(day2) :\n ",day1.union(day2))
+print("------------------"*4)
+
+------------------------------------
+
+day1 = {"One","Two","Three","Six","Four"}
+day2 = {"Five","One","Six","Seven","Two"}
+print("Day1 set: ",day1)
+print("Day2 set: ",day2)
+print("------------------"*4)
+#Intersection of two sets
+print("day1&day2 : ",day1&day2)
+print("day1.intersection(day2): ",day1.intersection(day2))  # printing intersection
+print("------------------"*4)
+#Prints only the intersection elements
+
+day1 = {"One","Two","Three","Six","Four"}
+print("Day1 set: ",day1)
+print("Day2 set: ",day2)
+print("------------------"*4)
+print("Set intersection using intersection_update()")
+day1.intersection_update(day1,day2)
+print("Updated set after intersection: ",day1)
+
+---------------------------------------------------
+
+set1 = {'one','four','three','nine',26}
+set2 = {'five','one','three','four','six'}
+
+print("Set1 :",set1)
+print("Set2 :",set2)
+print("------------------"*4)
+print("Union of set1 and set2: ")
+print("Union: ",set1|set2)
+print("union : ",set1.union(set2))
+print("------------------"*4)
+
+print("Intersection of set1 and set2:")
+print('Intersection :',set1&set2)
+print('Intersection :',set1.intersection(set2))
+print("------------------"*4)
+
+print("Difference of set1 and set2:")
+print('difference set1-set2: ',set1-set2)
+print('difference set2-set1: ',set2.difference(set1))
+print("------------------"*4)
+
+print("Symmetric difference of set1 and set2:")
+print('Symmetric_difference set1-set2: ',set1^set2)
+print('Symmetric_difference set2-set1: ',set2.symmetric_difference(set1))
+
+===============================================================
+set1 = frozenset({'one','four','three','nine',26,'one',26})
+print(set1)
+print(type(set1))
+
+set2 = frozenset({32,44,3,'one',26})
+
+print(set2)
+print(type(set2))
+
+print(set1|set2)
+
+
+---------------------------------------------------------
+1.Create a set of different products,add some more elements
+to it and print it.
+
+2.given 2 different sets, access the elements from the set
+and print all elements from both set.
+
+3.given 2 different sets, create a 3rd set which is having all
+common elements from set1 and set2.
+
+4.given 2 different sets, create a 3rd set with elements which
+are from set1 but not in set2.
+
+5.create a immutable set that holds primary key column values
+from employee table
+
+6.Given a set with some elements.Add a tuple to this set.
+
+
+===============================================
+Python sets are useful data structures for real-life implementations in various scenarios.
+Here are ten real-life use cases of Python sets:
+
+Removing Duplicates from a List:
+Sets can be used to remove duplicates from a list by converting the list to a set and then back to a list.
+
+Finding Unique Items in Data:
+Sets are ideal for finding unique items in a dataset, which is beneficial for data deduplication and analysis.
+
+Membership Testing:
+Sets offer efficient membership testing, allowing you to check if an item exists in a collection without
+iterating through the entire data.
+
+Set Operations:
+Python sets support set operations like union, intersection, difference, and symmetric difference,
+which are useful for data manipulation.
+
+Removing Common Elements from Multiple Lists:
+Sets can be used to find and remove common elements from two or more lists efficiently.
+
+Filtering Data:
+Sets can be used as filters to keep only specific items from a larger dataset, based on certain criteria.
+
+Finding Mutual Friends in Social Networks:
+In social networks, sets can be used to find mutual friends between two users by representing friends of each user as sets.
+
+Detecting Duplicate Entries in Data:
+Sets can be utilized to identify and eliminate duplicate entries from datasets, ensuring data integrity.
+
+Membership Deduplication:
+Sets can be used to maintain a list of unique members in a membership system or user database.
+
+Data Validation:
+Sets can be employed to validate input data against a predefined set of valid options,
+ensuring data consistency and correctness.
+
+Python sets offer fast and efficient operations for handling unique and distinct data elements,
+making them valuable in various real-life applications involving data manipulation, validation, and analysis.
+
+====================================================
+1)
+set1 = frozenset({'one','four','three','nine',26,'one',26})
+print(set1)
+print(type(set1))
+
+set1.add({23,33,54})
+print(set1)
+
+What will be the output?
+1.we get proper set values printed
+2.Error
+
+2)
+set1 = {1,2,3,3,99,6,44,81,2,3,1}
+print("The set is: ",set1)
+set1.discard(3)
+print(set1)
+
+What will be the output?
+1.we get proper set values printed
+2.Error
+
+3)
+set1 = {1,2,3,3,99,6,44,81,2,3,1}
+print("The set is: ",set1)
+set1.discard(33)
+print(set1)
+
+What will be the output?
+1.unchanged set will be printed with all values
+2.Error
+3.set will get printed removing 33 value
+
+
+4)
+set1 = {1,2,3,3,99,6,44,81,2,3,1}
+print("The set is: ",set1)
+set1.remove(33)
+print(set1)
+
+What will be the output?
+1.unchanged set will be printed with all values
+2.Error
+3.set will get printed removing 33 value
+
+5)
+set1 = {21,3,4,55,'Five',[21,22,6,7,3,4],67}
+
+print(set1)
+set1.discard('five')
+print(set1)
+
+what is the output?
+
+1.It prints the set values after removing 'Five'
+2.Code gives Error
+3.discard has no effect and set printed unaffected
+4.discard function gives KeyError

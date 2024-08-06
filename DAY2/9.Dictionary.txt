@@ -1,0 +1,289 @@
+# Dictionary : collection of different elements in
+key value pairs enclosed in {} separated by comma.{key:value}
+It is a mutable object.
+# key -- value pair -- both numbers and string are used for key as well as value
+# library == books -- code
+student --(id,name,marks,city)
+# keys (immutable)can be - int, string, float, tuple, frozenset
+------------------------------------------------
+
+d1 = {'id':101,'name':"Rohan",'marks':75,'city':"pune"}
+print("The dictionary is:\n",d1)
+print("-----------------"*5)
+
+d1 = {1:"Nashik",2:"Pune",3:"Khalapur"}
+print("The Dict is : ",d1)
+print("Adding the dictionary elements:")
+d1['Nsk'] = 103
+d1['Aug'] = 105
+d1['Pun'] = 108
+print("The updated Dict is :\n",d1)
+print("-----------------"*5)
+
+print("\nAccessing the elements in dictionary:")
+print("d1[1] :",d1[1])
+print("d1[3] :",d1[3])
+print("-----------------"*5)
+d1[4]= "Aurangabad"
+print("The updated Dict is: ",d1)
+-------------------------------------------------------
+
+print("creating a empty set:")
+d2 = set()
+print(d2)
+print(type(d2))
+print("-----------------"*5)
+
+print("Creating empty dictionary:")
+d2 ={}   # empty dict
+print("The empty dictionary is:",d2)
+print("-----------------"*5)
+
+print("Adding elements to the dictionary:")
+d2[0]=101
+d2[1]=102
+print("The dictionary is:\n",d2)
+print("-----------------"*5)
+
+print("Accessing dict elements using get().")
+a = d2.get(1)
+print("d2.get(1) :",a)
+print("d2.get(0) :",d2.get(3))
+print("d2.get(0) :",d2[3])
+print("-----------------"*5)
+
+
+
+=============================================
+dict1 = {'1':10,2:20,3:30}  # key : value
+print("The Dict is :\n",dict1)
+print(type(dict1))
+print("--------------------"*5)
+
+dict1[5] = 'one'
+print("The Updated Dict is :\n",dict1)
+print("--------------------"*5)
+
+dict1[2.2] = 'one'
+print("The Updated Dict is :\n",dict1)
+print("--------------------"*5)
+
+dict1[2.2] = 'Five'
+print("The Updated Dict is :\n",dict1)
+print("--------------------"*5)
+
+print("Accessing dict elements using get()")
+print("dict1[2] :",dict1[2])
+print("dict1.get(3) :",dict1.get(3))
+print("dict1.get(5) :",dict1.get(5))
+
+==================================================
+
+dict1 = {1:10,2:20,3:30}  # key : value
+print("The Dict is :\n",dict1)
+print(type(dict1))
+print("--------------------"*5)
+
+print("Removing element using pop() ")
+print("dict1.pop(1) :",dict1.pop(1))    # returns the value in the o/p and deletes the element
+print("The  updated dict is:\n",dict1)
+print("--------------------"*5)
+
+dict1[1.5] = 45
+dict1[7] = 90
+print("The  updated dict is:\n",dict1)
+print("--------------------"*5)
+
+print("Removing element using popitem()")
+print("dict1.popitem() :",dict1.popitem())  # returns the key:value pair in the o/p
+print("The  updated dict is:\n",dict1)
+
+
+---------------------------------------------
+# Creating a dictionary with the for loop
+
+squares = {a: a*a for a in range(1,6)}
+print(squares)
+
+squares = {a: a*a for a in range(1,11) if a%2 ==1}
+print(squares)
+
+
+---------------------------------------------------
+#Iterate a Dictionary
+
+
+emp = {'name':'Laxman','id':1010,'Age':34,'salary':80000}
+
+for x in emp:     # print the keys only
+    print(x)
+print('****'*10)
+
+for x in emp:     # print the values
+    print(emp[x])
+print('****'*10)
+
+for x in emp.values():   # print the values
+    print(x)
+print('****'*10)
+
+for x in emp.items():   # print the keys and values
+    print(x)
+print('****'*10)
+
+for x,y in emp.items():   # print the keys and values
+    print(x,' is the ',y)
+
+------------------------------------------------
+
+set1 = frozenset({3,2,5})  # hashable object
+print("The set is:\n",set1)
+print(type(set1))
+print("---------------"*5)
+
+
+d1 = {set1:'frozenset',2:'Python'}
+print("The dictionary is:\n",d1)
+print(type(d1))
+print("---------------"*5)
+
+list1 = [1,2,3]   # unhashable object
+print("The list is: ",list1)
+print("---------------"*5)
+
+# d1 = {list1:'List',2:'Python'}
+# print("The dictionary is:\n",d1)
+# print(type(d1))
+
+#hashable : = which has a unique id or value has value
+
+===========================================
+d1 = {1:{1:'One',2:'Two'},2:{2:'Two'},3:{21,22,34}}
+
+print(d1)
+print(d1[1][1])
+print(d1[1][2])
+
+s1 = {'sid':[101,102,103],
+      'sname':['rohit','seema','rohan'],
+      'sage':[18,17,18]}
+print(s1)
+print(s1['sid'][1])
+
+========================================
+-----------------------------------------------------------
+# Find the length of Dictionary
+# print the Dictionary in sorted manner
+# Check weather the value is present in Dictionary-create- print-print-values
+# convert a tuple in Dictionary
+# create a Dictionary student with student details.
+# add elements to Student Dictionary
+# delete one element from Student Dictionary
+# return a element with key 101 from student Dictionary
+# print only the keys from Dictionary student
+# print only the values from Dictionary Student
+# create a dict Employee with ename as key and salary as value.
+# print the Employee dict
+# delete the Employee with salary -10000
+
+
+=================================================
+Python dictionaries are incredibly versatile and find applications in various real-life scenarios. Here are ten real-life implementations of Python dictionaries:
+
+Database Records:
+Python dictionaries can be used to represent and manipulate database records. Each record can be stored as a dictionary with keys as column names and values as corresponding data.
+
+Inventory Management:
+Dictionaries can be used to maintain inventory data, where the product names act as keys, and the corresponding quantities or prices are the values.
+
+Student Information Management:
+Dictionaries are useful for managing student information in a school or college database, with student IDs as keys and their details (name, age, grade, etc.) as values.
+
+Language Translation:
+Dictionaries can be employed for language translation, where words or phrases in one language are stored as keys, and their translations in another language are the values.
+
+Configuration Settings:
+Python dictionaries are often used to store configuration settings for applications,
+with keys representing the settings' names and values holding their respective values.
+
+Financial Transactions:
+Dictionaries can be utilized to record financial transactions, with transaction IDs as keys and transaction details (amount, date, description) as values.
+
+Address Book:
+Python dictionaries can be employed to create an address book, with names as keys and contact details (phone numbers, emails) as values.
+
+Country Information:
+Dictionaries can be used to store information about countries, where the country names are keys, and details like population, capital, currency are the values.
+
+Data Processing:
+Dictionaries can be utilized to process and aggregate data. For example, counting occurrences of words in a text can be done using dictionaries with words as keys and their frequencies as values.
+
+Web APIs:
+Python dictionaries are commonly used to work with web APIs, where the API response is often returned as a JSON object (which can be easily converted to a dictionary) containing relevant data.
+
+These examples highlight how Python dictionaries play a vital role in various applications across different domains, demonstrating their flexibility and utility in real-world scenarios.
+
+
+============================================================
+1)
+squares = {a:a for a in range(1,11) if a%2 ==1}
+print(squares)
+
+if you execute above code what will be the output?
+1.returns a list of values
+2.returns a dictionary of key, value pairs
+3.Error
+
+2)
+set1 = frozenset({1,5,9})  # hashable object
+d1 = {set1:'frozenset',2:'Python'}
+print("The dictionary is:\n",d1)
+
+print(d1[frozenset({9, 5, 1})])
+
+What is the output?
+1. The dictionary is:
+ {frozenset({1, 5, 9}): 'frozenset', 2: 'Python'}
+frozenset
+
+2.Error
+3.The dictionary is:
+ {frozenset({1, 5, 9}): 'frozenset', 2: 'Python'}
+ keyError: frozenset({9, 5, 1})
+
+3)
+data = {'sid':101,'sname':'Sam','sage':18,'city':'Mumbai'}
+
+for i in data.values():
+    print(i)
+
+What is the output?
+1.Prints all key value pairs
+2.Prints only the keys in o/p
+3.Prints only the values in the o/p
+4.It gives Error in for loop
+
+4)
+data = {'sid':101,'sname':'Sam','sage':18,'city':'Mumbai'}
+
+print(data.pop()) #
+print(data.pop('sname'))
+
+What is the output?
+1. Returns value for sname, and one random key value is removed
+2. Returns value for sname and Error for 1st pop operation
+3.Program ends with TypeError for line number 2
+4.Program ends with KeyError for line number 2
+
+5)
+data = {'sid':101,'sname':'Sam','sage':18,'city':'Mumbai'}
+
+data['sname'] = 'Rohit'
+data['marks'] = 90
+print(data)
+
+What happens because of line 2 and 3?
+1.line 2 modifies the value for sname and line 3 adds new key value pair
+2.line 2 gives Error and line 3 is not executed
+3.line 2 modifies the value for sname , line 3 gives Error
+4.both line gives Error

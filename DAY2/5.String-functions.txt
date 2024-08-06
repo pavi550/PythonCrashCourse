@@ -1,0 +1,201 @@
+Python String functions
+-------------------------------
+
+capitalize() method/function converts first character of the string
+into uppercase without altering the whole string
+
+ 
+str = "administrator"  
+ 
+str2 = str.capitalize()  
+ 
+print("Old value:", str)  
+print("New value:", str2)  
+
+-------------------------------------
+casefold() method returns a lowercase copy of the string.
+This function was introduced in Python 3.3.
+
+ 
+str = "ADMIN"  
+ 
+str2 = str.casefold()  
+  
+print(str)  
+print("New value:", str2) 
+
+--------------------------------------------
+Python center() method alligns string to the center
+by filling paddings left and right of the string
+
+str = "Python is a general purpose programming language"
+str2 = str.center(25)
+print(str)
+print(str2)
+str2 = str.center(40)
+print(str2)
+str2 = str.center(25,'$')
+print(str2)
+-------------
+
+str = "Python is a general purpose programming language"
+str2 = str.center(25,'*')
+print(str)
+print(str2)
+
+----------------------------------
+#Count() method returns the number of occurrence of substring in the
+#specified range
+
+#Syntax : count(sub[, start[, end]])
+
+str = "Hello World"  
+str2 = str.count('l')    
+print("occurrences:", str2)
+
+statement = 'Welcome to the Day two for python'
+print("The string is: ",statement)
+result = statement.count('o',5)
+print(result)
+
+
+statement = 'Welcome to the Day two for python'
+print("The string is: ",statement)
+result = statement.count('o',5,25)
+print(result)
+
+-----------------------------------
+
+str = "This is the turning point 1 2 2 1 3 2 1"
+str2 = str.count('t',4)
+print(str)
+print(str2)
+print("-------------")
+str3 = str.count('2',15,35)
+print(str3)
+
+------------------------------------
+#find() method finds substring in the whole string and
+#returns index of the first match. It returns -1 if
+#substring does not match.
+
+str = "Welcome to Python"  
+ 
+str2 = str.find("the")  
+print(str2) 
+print("-----------------")
+print(str.find("to"))
+
+
+-------------------------------------
+split() method splits the string into a comma separated list.
+
+print("The use of split function ")
+
+str = "Welcome to Python"
+print("The string is:",str)
+str2 = str.split()
+print("The modified string is" ,str2)
+print("-----------------")
+
+str = "Python is a general purpose programming language"
+print("The string is:",str)
+num = str.split()
+print("The modified string is",num )
+
+str = "Python is a programming language"
+str2 = str.split()
+print("The string is:",str)
+print("The modified string is",str2)
+print("___________________")
+str3 = str.split('is')
+print(str3)
+str4 = str.split(' ')
+print(str4)
+str5 = str.split('a')
+print(str5)
+str6 = str.split('g')
+print(str6)
+
+
+--------------------------------------  
+#Replace() method Return a copy of the string with all occurrences
+#of substring old replaced by new
+
+#Syntax: replace(old, new[, count])
+
+str = "Python is a programming language"  
+  
+str2 = str.replace("Python","Java")  
+print(str)  
+print(str2) 
+str2 = str.replace("g","$$",3)
+print(str2)
+
+str2 = str.replace(str,"Welcome to the Python")
+print(str2)
+
+---------------------------------------
+isdigit() method returns True if all the characters
+in the string are digits.
+
+str = '98765'  
+
+str2 = str.isdigit()  
+ 
+print(str2)  
+
+str = '980-123-8765'
+print(str.isdigit())
+
+----------------------
+
+str = "!@#12234t*&^%"  
+if str.isdigit() == True:  
+    print("The Given String is digit")  
+else:  
+    print("The Given String is not a digit") 
+
+-------------------------------------------
+#strip() , rstrip() and lstrip()
+str = "      Hello   world    "
+print(str)
+print("+++++++++++++")
+print(str.strip())
+print("+++++++++++++")
+print(str.rstrip())
+print("+++++++++++++")
+print(str.lstrip()) 
+
+---------------------------------
+
+Wap to replace all blank spaces with ','.
+Wap to count all the occurrences of 'a' in a string.
+Wap to remove a char from the string.
+Wap to print string is Palindrome or not.
+Wap to find the first occurrences of 'the' in string.
+Wap to count uppercase and lower case letters in string.
+Wap to return all the digits from the string.
+Wap to return the number of letters in string.
+
+# Useful String methods
+� upper()
+� lower()
+� islower()
+� isupper()
+   The isupper() and islower() methods will return a Boolean True value
+  if the string has at least one letter and all the letters are   uppercase or lowercase, respectively.
+
+� isalpha() returns True if the string consists only of letters and is not blank.
+
+� isalnum() returns True if the string consists only of letters and numbers and is not blank.
+
+� isdecimal() returns True if the string consists only of numeric characters and is not blank.
+
+� isspace() returns True if the string consists only of spaces, tabs, and newlines and is not blank.
+
+� istitle() returns True if the string consists only of words that begin with an uppercase letter followed by only lowercase letters.
+
+� startswith() return True if the string value it is called on begins with the string passed to the method
+
+� endswith() return True if the string value it is called on ends with the string passed to the method
