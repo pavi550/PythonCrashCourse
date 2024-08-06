@@ -1,1 +1,1 @@
-# Pythontest
+# Python class
