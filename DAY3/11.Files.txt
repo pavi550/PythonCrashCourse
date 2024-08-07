@@ -232,7 +232,7 @@ print("After reading, the filepointer is at:",file2.tell())
 print('This is files demo')
 
 # to handle any data or resource we need a variable
-file1 = open('filedemo1.txt','r')
+file1 = open('first.txt','r')
 if file1:
     print('File opened')
     data = file1.readline()         # returns single line
@@ -250,7 +250,7 @@ file1.close()
 print('This file is closed')
 
 ----------------------------------------
-with open('filedemo1.txt','w') as file1:
+with open('first.txt','w') as file1:
     if file1:
         print('file opened')
         print('The cursor is at',file1.tell())
@@ -268,7 +268,7 @@ print('Code completed...')
 print('This is files demo')
 # to handle any data or resource we need a variable
 #
-with open('filedemo1.txt','r') as file1:
+with open('first.txt','r') as file1:
     if file1:
         print('file opened')
         data = file1.readline()
@@ -309,7 +309,7 @@ import PyPDF2
 file1 = open('pythonfiles.pdf', 'rb')  #read in binary
 
 # creating a pdf reader object
-pdfReader = PyPDF2.PdfFileReader(file1)
+pdfReader = PyPDF2.PdfReader(file1)
 
 # printing number of pages in pdf file
 print(pdfReader.numPages)
