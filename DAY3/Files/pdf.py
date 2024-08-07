@@ -8,13 +8,13 @@ file1 = open('pythonfiles.pdf', 'rb')  #read in binary
 pdfReader = PyPDF2.PdfReader(file1)
 
 # printing number of pages in pdf file
-print(pdfReader.numPages)
+print(len(pdfReader.pages))
 
 # creating a page object
-pageObj = pdfReader.getPage(1)
+pageObj = pdfReader.pages[1]
 
 # extracting text from page
-print(pageObj.extractText())
+print(pageObj.extract_text())
 
 # closing the pdf file object
 file1.close()

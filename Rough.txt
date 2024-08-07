@@ -1,0 +1,203 @@
+Introduction to Python
+===============================
+programming lang for performing day to day stuff
+Platform indepenedent
+open source
+OOPs supported
+
+general purpose , high level 
+
+compiler / interpreter
+standard librabry -- code/programs
+dynamic programing lang
+
+Why Python?
+2000-02 -- orcut,Daily motion,youtube
+2003-4-05 -- RDBMS -- Big-Data-- Hadoop - NoSql Databases
+SQl to connect -- do not use sql as lang -
+lang -- java,php,-->python,R  (Data science-AI,ML)
+06-- 2010-12
+
+
+
+main()
+{//start of the block
+  for(i=0;i<5;i++;)
+    print()
+  print()
+}//end of the block
+
+
+data types-- int,string,char,float,
+number,string,sequence - list,tuple,set,dictionary 
+boolean, special
+
+int number; -- mem allocation
+number = 10;
+int number = 20;
+
+String name = "Rohit";
+
+number = 20 -- max single
+number = 'Rohit'
+
+array int number ={2,2,3,4,5,66,7}
+
+heterogenious
+list -[2,3,4,'Rohit',23.45] --mutable
+tuple -(2,3,4,'Rohit',23.45) --immutable
+set -{2,3,4,'Rohit',23.45} -- unique elements
+dict - {1:'Rohit','two':2}  --key-value pair -- immutable variables(values)
+
+compiler -- JIT compiler -- Just In Time
+
+for(ini;condi;inc/dec) 
+{}
+
+for ele in range(6):
+  print(ele)
+
+forward-- 0,1,2,3,4,5,6
+
+array int num1 = {12,12,23,45,2,1,5}
+
+list is mutable object[]
+tuple is immutable list()
+set is a mutable object {}  -- frozenset is a immutable set
+dict is collection of key value pair , mutable
+
+stud
+--------
+sid|sname|grades
+===========================
+101|rohit|90
+102|amit|92
+103|Ansh|90
+
+var1 = {'sid':[101,102,103],
+	'sname':[]}
+
+var1 = {1:'one', 2:'Two','Three':3}
+
+var1[1] = 'Ten'
+{1:'Ten', 2:'Two','Three':3}
+
+var1[5] = 'Python'
+{1:'Ten', 2:'Two','Three':3, 5:'Python'}
+
+print(var1.pop(2)) -- "Two"
+{1:'Ten','Three':3, 5:'Python'}
+
+print(var1.popitem()) -- (5,'Python')removes 1 key value pair
+{1:'Ten','Three':3}
+
+print(var1[7]) -- error
+print(var1.get(7)) --None
+
+list1 = [x+6 for x in range(10)]
+
+d1= {x:x+6 for x in range(10)}
+
+======================================
+return type func_name(args)
+{
+
+}
+
+int add(int a, int b)
+{
+ return a+b
+}
+int c = add(10,20)---------- function call
+
+int add()
+{ int a = 10, int b= 20
+ return a+b
+}
+int c = add()---------- function call
+print()
+void add()
+{int a = 10, int b= 20,int c;
+c = a+b
+print(c)
+}
+add()---------- function call
+
+def fun_name(args):
+   statements 
+   return 1 /None keyword
+
+print()
+
+fun_name(args)
+
+def fun1(a,b):  -- a and b are called positional arguments
+  pass
+
+fun1(10,20) -- 10 -->a 20-->b
+
+def fun1(a,b = 25,c=35):  -- a/b is positional arguments, b is default argument
+  pass
+
+fun1(10,20) -- 10 -->a 20-->b
+fun1(15)------ value of b will taken default one
+fun1() -- error
+
+def fun1(a,b,c):  -- a and b are called positional arguments
+  pass
+
+fun1(a = 20,b = 30) ------- keyword argument func call
+fun1(10,b = 20,c = 30)
+fun1(10,15,c=30)--error
+
+fun1('Rohit','Python')
+
+try{}--catch{} --finally{}
+
+try -- except
+
+==============================
+
+named location on the drive
+
+create
+open
+read/write/append
+close
+delete
+
+open() -- open a file -- r,w,a
+read()
+write()
+close()
+
+============================
+import a module in other program file(module)
+import mod1
+import mod as m1
+from mod1 import func1,
+from mod1 import func1 as f1
+
+if __name__ == '__main__':
+code that is visible and accessible to all
+code that is visible and accessible to self only
+
+import pac1.mod1
+from pac1.mod1 import fun1
+from pac1.mod1 import *
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
