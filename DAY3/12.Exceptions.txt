@@ -68,8 +68,8 @@ try:
     b = int(input("Enter b:"))    
     c = a/b;    
     print("a/b = %d"%c)    
-except (ZeroDivisionError, TypeError, NameError):    
-    print("can't divide by zero") 
+except (ZeroDivisionError, TypeError, NameError) as e:
+    print("can't divide by zero ",e)
    
 else:    
     print("This is the else block")
