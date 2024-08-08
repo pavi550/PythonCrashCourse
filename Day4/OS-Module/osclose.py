@@ -6,4 +6,4 @@ fr = "Python.txt"
 file = open(fr, 'r')
 text = file.read()
 print(text)
-os.close(file)
+file.close()

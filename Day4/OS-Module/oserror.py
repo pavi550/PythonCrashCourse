@@ -5,7 +5,8 @@ try:
     # then it throw an IOError  
     filename = 'Python.txt'  
     f = open(filename, 'r')  
-    text = f.read()  
+    text = f.read()
+    print(text)
     f.close()  
   
 # The Control jumps directly to here if  
