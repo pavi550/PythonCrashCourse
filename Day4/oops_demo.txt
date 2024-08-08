@@ -1,0 +1,764 @@
+print("Demo for the Classes and Objects")
+
+class circle:
+    'This is the first demo for the class'
+    pass
+
+print("Creating the Objects..")
+c1 = circle()
+print("Object Created..")
+c1.name = 'Circle1'    # instance variable
+print(c1.name)
+
+-------------------------------------------
+
+print("Demo for the Classes and Objects")
+
+class circle:
+    'This is the first demo for the class'
+
+    def __init__(self, radius):   #Constructor
+        self.radius = radius
+
+    def Area(self):     #method
+        print('Inside area method')
+
+print("Creating the Objects..")
+c1 = circle(5)
+print("Object Created..")
+print("Calling the Method in the class..")
+c1.Area()
+print("The Radius of c1 is",c1.radius)
+
+---------------------------------------------------
+print("Demo for the Classes and Objects")
+
+class Employee:         # class creation
+
+    def __init__(self,id,name):
+        self.id = id
+        self.name = name
+
+    def display(self):     # self represents the current object/instance
+        print('Inside display method')
+        print('The Id is',self.id)
+        print('The Name is:',self.name)
+
+print('This is the example for class and object')
+print("Creating the Objects..")
+emp = Employee(101,'Rohit')      # object creation
+print('Printing the Details of Object')
+print(emp.id)
+print(emp.name)
+print("Calling the Display Method")
+emp.display()
+emp1 = Employee(102,'Virat')
+print("Calling the Display Method for 2object")
+emp1.display()
+
+--------------------------------------------------
+print("Demo for the Classes and Objects")
+
+class Employee:         # class creation
+    'Demo for default constructor...'
+    id = 1001   # id = None
+    name = 'Anand'
+
+    def display(self):     # self represents the current object/instance
+        print('Inside display method')
+        print('The Id is',self.id)
+        print('The Name is:',self.name)
+
+print('This is the example for class and object')
+print("Creating the Objects..")
+emp = Employee()      # object creation
+print('Printing the Details of Object')
+print(emp.id)
+print(emp.name)
+print("Calling the Display Method")
+emp.display()
+emp2 =Employee()
+print(emp2.id)
+print(emp2.name)
+print("Updating the data for emp2")
+emp2.id = 1002
+emp2.name = 'Rohit'
+print("Calling the display method")
+emp2.display()
+
+------------------------------------------------
+class product:
+    'This class is for parametorized constructor demo'
+    def __init__(self,name):
+        self.name = name
+        print('This is a parameterized constructor')
+
+    def method1(self,name):
+        print('This is inside the class')
+        print('The name is:',self.name)
+
+print("Crearting the objects")
+a1 = product('Soap')
+print('Calling the method')
+a1.method1(a1.name)
+print("Crearting the object 2")
+a2 = product('Car')
+a1.name = 'Cricket-Bat'    # updating the instance variable
+print(a1.name)
+print('Calling the method')
+a1.method1(a1.name)
+
+-------------------------------------------------
+# Multiple constructors
+
+class class1:
+    " Demo for multiple constructors in python"
+    def __init__(self,name,id,age):   # constructor2
+        self.name = name
+        self.id = id
+        self.age = age
+    def __init__(self,name,id):    # constructor1
+        self.name = name
+        self.id = id
+    def __init__(self):
+        print("This is constructor 3")
+
+c1 = class1()
+print('This is a constructor demo')
+print("Creating the object c2")
+c2 = class1('Name1',121)
+print("Creating the object c3")
+c3 = class1('Rohit',222,34)
+print("Creating the object c1")
+
+
+#
+# print("Creating the object c3")
+# c3 = class1('Rohit',222,34)
+# print("Creating the object c1")
+# c1 = class1()
+# print("Creating the object c2")
+# c2 = class1('Name1',121)
+# print('This is a constructor demo')
+
+# constructor overloading is not supported in python'
+# latest definition of the constructor available for the interpreter will be utilised'
+
+
+-----------------------------------------------------
+# Class Variables
+print("Demo for the class variable...")
+class Circle:
+    pi = 3.14			#class variable
+    def __init__(self):
+        self.radius = 1
+
+    def area(self):
+        return self.radius * self.radius * Circle.pi
+
+print("Creating the Objects")
+c = Circle()
+print("Creating the instance variable")
+c.radius = 3       # instance variable
+print("Calling the Area method")
+print(c.area())
+print("trying to access the class variable")
+print(Circle.pi)
+print("Updating the class variable")
+Circle.pi = 4
+print("Updated class variable :",Circle.pi)
+
+-----------------------------------------------------
+
+# Class Variables
+print("Demo for the class variable...")
+class Circle:
+    pi = 3.14			#class variable
+    def __init__(self):
+        self.radius = 1
+
+    def area(self):
+        return self.radius * self.radius * self.pi
+
+print("Creating the Objects")
+c = Circle()
+print("Creating the instance variable")
+c.radius = 3       # instance variable
+print("Calling the Area method")
+print(c.area())
+print("trying to access the class variable")
+print(Circle.pi)
+print("Printing the value of pi for object c")
+print("Pi for c:",c.pi)   #
+print("Updating the class variable")
+Circle.pi = 4
+print("Updated class variable :",Circle.pi)
+print("Printing the value of pi for object c")
+print("Pi for c:",c.pi)   #
+print("can we reassign the pi for object C?")
+c.pi = 6       # pi here is now instance variable for object c
+print("Updates Pi for c:",c.pi)   #
+print("Calling the Area method")
+print(c.area())
+print("trying to access the class variable")
+print(Circle.pi)
+
+------------------------------------------------------------
+
+# Instance Variables
+print("Demo for the class variable...")
+class Circle:
+    pi = 3.14			#class variable
+    def __init__(self):
+        self.radius = 1
+
+    def area(self):
+        return self.radius * self.radius * self.pi
+
+print("Creating the Objects")
+c = Circle()
+print("Creating the instance variable")
+c.radius = 3       # instance variable
+print("Calling the Area method")
+print(c.area())
+c1 = Circle()
+print(c1.radius)
+print(c1.pi)
+print("Creating the instance variable ")
+c1.name = 'Circle2' #  instance variable for c1
+print("Name of circle is:",c1.name)
+
+------------------------------------------------------------
+# Inheritance
+print('Demo for Inheritance')
+class Parent1:
+    'This is the parent class with display method'
+    def display(self):
+        print('This is display from Parent')
+print("Parent 1 class created")
+
+class Child(Parent1):   # inheriting the Parent1 class
+    'Child class for Parent1'
+    def __init__(self,name):
+        self.name = name
+
+print("Child class created")
+print("Creating the object of child class")
+c1 = Child('Rohit')
+print("Object created...")
+print("Name of the Child is:",c1.name)
+print("Accessing the Method from Parent1 class")
+c1.display()
+
+
+------------------------------------------------------------------
+# Multilevel inheritance
+class Base:      # Parent class1
+    def func1(self):
+        print('This is the func1 from Base class')
+
+class Derived(Base):     #child class for Base class
+    print('This is the child class')
+
+    def func2(self):
+        print('This is the function 2 in Derived class')
+print('Demo for  Multi-level Inheritance')
+d1 = Derived()
+print("Object of Derived class created..")
+print('Calling the Base class function')
+d1.func1()
+print('Calling the Derived class function')
+d1.func2()
+
+class Child(Derived):    #child class for Derived class
+    print('This is the Child class')
+
+    def func3(self):
+        print('This is the function from Child class')
+print("Chile class created..")
+print("Creating the object of child class")
+c1 = Child()
+print('Calling the Derived class function using C1')
+c1.func2()
+print('Calling the Base class function using C1')
+c1.func1()
+
+----------------------------------------------------------------
+print('Demo for Multiple Inheritance')
+class Class1:
+    def func1(self):
+        print('This is the method fron Class1')
+    def func3(self,name):
+        print('This is the func2 from Class1')
+        print('The name is',self.name)
+print("Class 1 created")
+class Class2:
+    def func2(self):
+        print('This is the method from Class2')
+print("Class 2 created")
+
+class Class3(Class1,Class2):
+    print('This is class 3')
+
+    def func3(self):
+        print('This is the func3 from class 3')
+
+print("Class 3 created")
+print("Class 3 is child class for class1 and class 2")
+print("Crearting object for class 3")
+c3 =Class3()
+print('Calling the method from Class1 using C3')
+c3.func1()
+print('Calling the method from Class2 using C3')
+c3.func2()     # error in o/p missing 1 argument name
+#
+# print(isinstance(c3,Class2))
+# print(isinstance(c3,Class3))
+# print(issubclass(Class2,Class1))
+# print(issubclass(Class3,Class1))
+
+---------------------------------------------------------------
+print('Demo for Multiple Inheritance')
+'both base classes have same methods..'
+class Class1:
+    def func2(self):
+        print('This is the method from Class1')
+
+    def func4(self,name):
+        print('This is the func2 from Class1')
+        print('The name is',self.name)
+print("Class 1 created")
+class Class2:
+
+    def func2(self):
+        print('This is the method from Class2')
+print("Class 2 created")
+
+class Class3(Class1,Class2):
+    print('This is class 3')
+
+    def func3(self):
+        print('This is the func3 from class 3')
+
+print("Class 3 created")
+print("Class 3 is child class for class1 and class 2")
+print("Crearting object for class 3")
+c3 =Class3()
+print('Calling the method from Class1 using C3')
+c3.name = 'Rohit'
+c3.func4(c3.name)
+print('Calling the method from Class2 using C3')
+c3.func2()     # error in o/p missing 1 argument name
+
+----------------------------------------------------------------
+print('Demo for Multiple Inheritance')
+'both base classes have same methods..'
+class Class1:
+    def func2(self):
+        print('This is the func2 method from Class1')
+
+    def func4(self,name):
+        print('This is the func4 from Class1')
+        print('The name is',self.name)
+print("Class 1 created")
+class Class2:
+
+    def func2(self):
+        print('This is the func2 method from Class2')
+print("Class 2 created")
+
+class Class4:
+
+    def func2(self):
+        print('This is the func2 method from Class4')
+
+class Class3(Class2,Class4,Class1):   # sequence of classes that we inherit
+    print('This is class 3')
+
+    def func3(self):
+        print('This is the func3 from class 3')
+
+print("Class 3 created")
+print("Class 3 is child class for class1 and class 2")
+print("Crearting object for class 3")
+c3 =Class3()
+print('Calling the method from Class1 using C3')
+c3.name = 'Rohit'
+c3.func4(c3.name)
+print('Calling the method from Class2 using C3')
+c3.func2()     #
+
+"""
+when we do multiple inheritance, and we have same named methods in multiple classes,
+then the call to the method will be resolved by the sequence of the base classes you have inherited.
+"""
+
+------------------------------------------------------------------
+print('Demo for Multiple Inheritance')
+'both base classes have same methods..'
+class Class1:
+    def func2(self):
+        print('This is the func2 method from Class1')
+
+    def func4(self,name):
+        print('This is the func4 from Class1')
+        print('The name is',self.name)
+print("Class 1 created")
+class Class2:
+
+    def func2(self):
+        print('This is the func2 method from Class2')
+print("Class 2 created")
+
+class Class4:
+
+    def func2(self):
+        print('This is the func2 method from Class4')
+
+class Class3(Class2,Class4,Class1):   # sequence of classes that we inherit
+    print('This is class 3')
+
+    def func3(self):
+        print('This is the func3 from class 3')
+
+    def func2(self):
+        print('This is the func2 method from Class3')
+
+print("Class 3 created")
+print("Class 3 is child class for class1 and class 2")
+print("Crearting object for class 3")
+c3 =Class3()
+print('Calling the method from Class1 using C3')
+c3.name = 'Rohit'
+c3.func4(c3.name)
+print('Calling the method func2 using C3')
+c3.func2()     #?
+
+print(isinstance(c3,Class2))
+print(isinstance(c3,Class3))
+print(issubclass(Class2,Class1))
+print(issubclass(Class3,Class1))
+"""
+when we do multiple inheritance, and we have same named methods in multiple classes,
+then the call to the method will be resolved by the sequence of the base classes you have inherited.
+And if the same named method is available in the child class also, then priority will be given to
+this method from child class.
+"""
+
+------------------------------------------------------------
+# Class Attributes
+
+class stud:
+    'This is the student class and this demo is for Attributes'
+    def __init__(self,id,name,age):
+        self.id = id
+        self.name = name
+        self.age = age
+print("Class student created..")
+print("Creating the objects")
+s1 = stud(121,'Rohan',21)
+s2 = stud(123,'Sumit',20)
+
+print('Demo for class Attributes')
+# getting the value using getattr
+print('The name is: ',getattr(s1,'name'))
+
+# Setting the value for an attribute
+print('New value for Name',setattr(s1,'name','Supriya'))
+
+# getting the value using getattr
+print('The name is: ',getattr(s1,'name'))
+
+# deleting the attribute
+print('Deleting an Attribute:', delattr(s1,'id'))
+
+# Checking the attribute
+print('Is Id present? -',hasattr(s1,'id'))
+
+print('The Dict is:',s1.__dict__)
+print('The Module is:',s1.__module__)
+print('The DOcumentation is:',s1.__doc__)
+
+----------------------------------------------------------------------
+# Method overriding
+
+import math
+# Super class
+class Polygons:
+    def number_of_sides(self):
+        return 0
+    def area(self):
+        return 0
+    def perimeter(self):
+        return 0
+# Triangle class inherits from Polygons
+class Triangle(Polygons):
+    def number_of_sides(self):
+        return 3
+    def area(self, base, height):
+        return 1 / 2 * base * height
+    def perimeter(self, a, b, c):
+        if a + b > c:
+            return a + b + c
+        else:
+            return "Invalid input: make sure a + b > c"
+
+
+tri = Triangle()
+print("Triangle Area:", tri.area(15, 25))
+print("Perimeter:", tri.perimeter(15, 20, 25))
+print("-----------------")
+print("Calling the area method from Polygon class")
+
+----------------------------------------------------------------------
+
+# Abstraction , private variables
+class class1:
+    __count = 0   # variable with double underscore is private varaible
+    pi = 3.14
+    def __init__(self):
+        class1.__count = class1.__count+1
+
+    def display(self):
+        print('The number of objects are',class1.__count)
+
+print('demo for private Variable')
+
+c1 = class1()
+c2 = class1()
+print('Objects Created.')
+print("Calling the display method..")
+c2.display()
+print("Getting the value of pi for c2")
+print(c2.pi)
+print("Getting value of __count for c2")
+#print(c2.__count)  # gives error attribute not present
+#print('Getting the Count of Objects',class1.__count)  # gives error attribute not present
+print("Creating a private instance variable")
+c2.__count = 4    # this is private instance variable
+print("The value for c2.__count :",c2.__count)
+
+-----------------------------------------------------------
+#Operator overloading part1
+
+class Point:
+    def __init__(self, x = 0, y = 0):
+        self.x = x
+        self.y = y
+
+p1=Point(2,3)
+print('This are the x and y co-ordinates of P1')
+print(p1.x,' --',p1.y)
+p2=Point(3,7)
+print('This are the x and y co-ordinates of P2')
+print(p2.x,'---',p2.y)
+print("Getting Point p3 by adding p1 and p3 ")
+p3 = p1+p2    # p1 is object, p2 is object
+print(p3)
+
+-------------------------------
+# Operator Overloading
+class Point:
+    def __init__(self, x = 0, y = 0):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return "({0},{1})".format(self.x, self.y)
+
+    def __add__(self, other):  # p3 = p1+p2 [(x3,y3)= (x1+x2),(y1+y2)]
+        # operand + operand2
+        x = self.x + other.x
+        y = self.y + other.y
+        return Point(x, y)   #returning object of class Point
+
+p1=Point(2,3)
+print('This are the x and y co-ordinates of P1')
+print(p1)
+p2=Point(3,7)
+print('This are the x and y co-ordinates of P2')
+print(p2)
+print('Adding two points using operator overloading')
+p3=p1+p2 # p3 = p1+p2 [(x3,y3)= (x1+x2),(y1+y2)]
+print('After addition the new point is- ',p3)
+----------------------------------------------------------
+# Operator Overloading
+class Point:
+    def __init__(self, x = 0, y = 0,z = 0):
+        self.x = x
+        self.y = y
+        self.z = z
+
+    def __str__(self):
+        return "({0},{1},{2})".format(self.x, self.y , self.z)
+
+    def __add__(self, other):  # p3 = p1+p2 [(x3,y3)= (x1+x2),(y1+y2)]
+        # operand + operand2
+        x = self.x + other.x
+        y = self.y + other.y
+        z = self.z + other.z
+        return Point(x, y, z)   #returning object of class Point
+
+p1=Point(2,3,4)
+print('This are the x and y co-ordinates of P1')
+print(p1)
+p2=Point(3,7,5)
+print('This are the x and y co-ordinates of P2')
+print(p2)
+p4 = Point(1,4,6)
+print('Adding two points using operator overloading')
+p3=p1+p2+p4 # p3 = p1+p2 [(x3,y3)= (x1+x2),(y1+y2)]
+print('After addition the new point is- ',p3)
+
+--------------------------------------------------------------
+# Class Methods
+
+class student:
+    counter = 0
+    def __init__(self,name,marks):
+        self.name = name
+        self.marks = marks
+        student.counter = student.counter+1
+
+    def msg(self):
+        print(self.name,'-- got --',self.marks)
+
+print('Demo for the Class method')
+s1 = student('Rohit',89)
+s2 = student('Amit',92)
+print("The objects are created..")
+print("Calling the method msg")
+s1.msg()
+s2.msg()
+====================================================================
+
+# Class Methods
+
+class student:
+    counter = 0
+    def __init__(self,name,marks):
+        self.name = name
+        self.marks = marks
+        student.counter = student.counter+1
+
+    def msg(self):      # takes object instance
+        print(self.name,'-- got --',self.marks)
+
+    @classmethod
+    def grades(cls,name,marks):     # cls takes class
+        return cls(name,((marks/600)*100))
+
+print('Demo for the Class method')
+s1 = student('Rohit',89)
+s2 = student('Amit',92)
+print("The objects are created..")
+print("Calling the method msg")
+s1.msg()
+s2.msg()
+
+#instead of grade we are available with total marks and need to calculate the grades
+total = 550
+name = 'Ria'
+marks = ((total/600)*100)  # we calculate the grades
+s3 = student(name,marks)
+print(s3.marks)
+s3.msg()
+total = 590
+name = 'Anand'
+s4 = student.grades(name,total)
+print(s4.marks)
+s4.msg()
+
+=======================================================================
+# Class Methods
+
+class student:
+    counter = 0
+    def __init__(self,name,marks):
+        self.name = name
+        self.marks = marks
+        student.counter = student.counter+1
+
+    def msg(self):      # takes object instance
+        print(self.name,'-- got --',self.marks)
+
+
+    @classmethod     #decorated
+    def object_count(cls):       #cls= class
+        return cls.counter
+
+    @classmethod
+    def grades(cls,name,marks):     # cls takes class
+        return cls(name,((marks/600)*100))
+
+print('Demo for the Class method')
+s1 = student('Rohit',89)
+s2 = student('Amit',92)
+print("The objects are created..")
+print("Calling the method msg")
+s1.msg()
+s2.msg()
+print("Getting the counter values for class")
+print(student.object_count())
+print("Getting the counter value for the object")
+print(s1.object_count())
+#instead of grade we are available with total marks and need to calculate the grades
+total = 550
+name = 'Ria'
+marks = ((total/600)*100)  # we calculate the grades
+s3 = student(name,marks)
+print(s3.marks)
+s3.msg()
+total = 590
+name = 'Anand'
+s4 = student.grades(name,total)
+print(s4.marks)
+s4.msg()
+print("Getting the counter value for the object")
+print(s1.object_count())
+
+==============================================================
+# super keyword Demo
+
+class Base:
+    def __init__(self,x):
+        self.x = x
+
+class Child(Base):
+    def __init__(self,x,y):
+        super(Child,self).__init__(x)
+        self.y = y
+
+    def print1(self,x,y):
+        print('The value for x',self.x)
+        print('The value for y ',self.y)
+
+c1 = Child(30,40)
+c1.print1(c1.x,c1.y)
+
+==================================================
+
+# super keyword Demo
+
+class class1:
+    def __init__(self,name):
+        self.name = name
+        print('This is Class1')
+
+class class2(class1):
+    def __init__(self,codname):
+        print('This is Class 2')
+        super().__init__(codname)
+
+class class3(class1):
+    def __init__(self,pname):
+        print('This is Class 3')
+        super().__init__(pname)
+
+class class4(class3,class2):
+    def __init__(self,name1):
+        print('This is Class 4')
+        super().__init__(name1)
+
+c4 = class4('Python')
+print('The name is: ',c4.name)

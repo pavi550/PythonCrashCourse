@@ -1,0 +1,149 @@
+Introduction
+The OS module in Python comes with various functions that
+enables developers to interact with the Operating system that
+they are currently working on. In this article we’ll be learning
+mainly to create and delete a directory/folder, rename a directory
+and even basics of file handling.
+
+Getting Started
+Python’s OS module comes packaged within python when installed. This means you do not need to separately install it using PIP. In order to access its various methods/functions, you just need to import the module.
+
+import os
+
+
+Getting current working directory
+The currently working directory is the folder in which the python script is saved and being run from.
+
+===================================
+
+import os
+
+print("The current working directory is:\n",os.getcwd())
+
+#Deleting a directory
+os.mkdir("D:\\Pythondemo")
+print("Directory created....")
+os.rmdir("D:\\Pythondemo") #
+print("\nDirectory Deleted....")
+#Renaming a directory
+
+os.mkdir("D:\\Pythondemo")
+print("\nDirectory created....")
+print("Renameing a Direcrory")
+os.rename("D:\\Pythondemo","D:\\Pythondemo2")
+
+
+#Changing a directory
+#The os module provides the chdir() function to change
+#the current working directory.
+print("Changing the dir")
+
+os.chdir("d:\\")
+print("The current working directory is:",os.getcwd())
+
+----------------------------------------------------
+
+os.popen()
+This function opens a file or from the command specified,
+and it returns a file object which is connected to a pipe.
+
+import os
+
+fd = "python.txt"
+
+# popen() is similar to open()
+file = open(fd, 'w')
+file.write("This is awesome")
+file.close()
+file = open(fd, 'r')
+text = file.read()
+print(text)
+
+# popen() provides gateway and accesses the file directly
+file = os.popen(fd, 'w')
+file.write("This is awesome")
+# File not closed, shown in next function.
+print("Closing the file")
+os.close(0)
+print("File closed")
+
+--------------------------------------------------------
+import os
+#Creating a file
+file = os.popen("Hello.txt", 'w')
+
+#A file named Hello.txt is created in the
+#current working directory.
+
+#Adding content to the created file
+file = os.popen("Hello.txt", 'w')
+print("File opened..")
+file.write("Hello there! This is a Python demo for os module")
+print("Data written to the file")
+print("Closing the file")
+os.close(1)
+------------------------------------------------------
+
+os.close()
+#This function closes the associated file with descriptor fr.
+
+import os     
+fr = "Python1.txt"    
+file = open(fr, 'r')     
+text = file.read()     
+print(text)     
+os.close(file)       
+
+----------------------------------------------------
+
+
+os.error()
+The os.error() function defines the OS level errors.
+It raises OSError in case of invalid or inaccessible file
+names and path etc.
+
+import os  
+  
+try:  
+    # If file does not exist,  
+    # then it throw an IOError  
+    filename = 'Python.txt'  
+    f = open(filename, 'r')  
+    text = f.read()  
+    f.close()  
+  
+# The Control jumps directly to here if  
+# any lines throws IOError.  
+except IOError:  
+  
+    # print(os.error) will <class 'OSError'>  
+    print('Problem reading: ' + filename)
+
+=========================================
+ # Python program to explain os.listdir() method
+
+# importing os module
+import os
+
+# Get the list of all files and directories
+# in the root directory
+path = "/"
+dir_list = os.listdir(path)
+
+print("Files and directories in '", path, "' :")
+
+# print the list
+print(dir_list)
+
+# Get the list of all files and directories
+# in the current directory
+path = os.getcwd()
+dir_list = os.listdir(path)
+
+print("Files and directories in '", path, "' :")
+
+# print the list
+print(dir_list)
+
+
+

@@ -1,0 +1,14 @@
+1)create a database to manage the details of books in library.
+(book_id,book_title,book_author,publication,pages)
+
+2)Write a code to design a calcualtor such that, we have only 1 function
+say calci(). using this function we can perform different operations with n number of arguments (like - addition with 2 numbers, 3 numbers and so on)
+.Also, in case only 1 value is passed this calci function should return error msg.[ fundamentals,functions,exceptions,scope of variable]
+
+3)Suppose there are 3 subjects in a hospital with all having different properties.you been a doctor needs to decide on the treatment such that, we will be able to identify them separately. 
+Write the python code for this situation.[concepts - fundamentals,data-types,functions,classes,exceptions]
+
+4) Given a dataset for shopping behaviour of people in India over last decade,try to analyse the data and suggest the changes required to be done in your organisation for growth in sales of your products.[fundamentals,functions,exceptions,set,dict]
+
+5) The dataset for different products of your organisation and customer buying pattern for last 5 yeras is given. try to analyse the dataset and predict required quantity for every product that organisation should produce in next 6 months.[fundamentals,functions,exceptions,set,dict]
+

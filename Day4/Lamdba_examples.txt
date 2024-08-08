@@ -1,0 +1,55 @@
+#map function
+''' map function returns a map object(which is an iterator)
+of the results after applying a given function to each
+item in the iterable
+
+'''
+
+def add1(n):
+    return n + n
+
+print(" Demo for the map()")
+numbers = (1,2,3,4,5)
+print("using a map function")
+result = map(add1,numbers)
+
+print("Result after using map function")
+print(list(result))
+
+==============================================
+# Lambda
+
+print("Demo for the Lambda functions...")
+
+numbers = (1,2,3,4,5)
+print("The tuple is: ",numbers)
+
+print("Using Lambda function")
+
+result = map(lambda x: x+x , numbers)
+
+print("The result is: ",list(result))
+
+=================================================
+# Filter
+'''
+It gives sequence with help of a function that tests each element
+in the sequence is true or not
+'''
+print("Demo for the filter()")
+
+seq = [1,2,3,4,5,6,7,8,12,22,44]
+
+print("The List is: ",seq)
+
+print("Function to find odd or even numbers")
+
+result = filter(lambda x : x%2 != 0,seq)
+
+print("The odd numbers are:")
+print(list(result))
+
+result = filter(lambda x : x%2 == 0,seq)
+
+print("The even numbers are:")
+print(list(result))
