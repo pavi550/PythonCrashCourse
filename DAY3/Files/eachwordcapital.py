@@ -5,7 +5,9 @@ try :
         print("Opening File in Read mode")
         for line in file:
             words = line.split()
+           # print(words)
             capitalized_words = [word.capitalize() for word in words]
+           # print(capitalized_words)
             print(' '.join(capitalized_words))
 
 

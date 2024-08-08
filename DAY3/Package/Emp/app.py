@@ -1,21 +1,21 @@
 #create a python file app
 #file app.py
-import Emp.Sales
-import Emp.Finance
+import Sales
+import Finance
 
 print("Calling from Sales")
-Emp.Sales.display()
+Sales.display()
 
 print("Calling from Finance")
-Emp.Finance.display()
+Finance.display()
 
-from Emp.Sales import display,Sales_rpt
+from Sales import display,Sales_rpt
 
 print("Calling from Sales")
 display()
 Sales_rpt()
 
-import Emp.Sales as sales
+import Sales as sales
 
 print("Calling from Sales")
 sales.display()
