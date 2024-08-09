@@ -1,7 +1,7 @@
 # Mysql demo
 
 import os
-import MySQLdb.connections
+import mysql.connector
 
 # Create the connection object
 
