@@ -1,0 +1,20 @@
+import numpy as np
+
+# Resize the array
+array1 = np.array(['1', '2', '3', '4', '5', '6', '7', '8'])
+print("Before:",array1)
+array1.resize(12)
+print(array1)
+print(array1.shape)
+print("********"*5)
+array1 = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+print("Before:",array1)
+array1.resize(2,6)
+print(array1)
+print(array1.shape)
+print("********"*5)
+array1 = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+print("Before:",array1)
+array1.resize(7)
+print(array1)
+print(array1.shape)
