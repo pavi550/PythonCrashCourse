@@ -1,6 +1,6 @@
 # file Demo1.py
 
-import Sales
+import Sales1
 import logging
 
 #logging in a file
@@ -22,4 +22,4 @@ logging.info("Addition: {} + {} is {} : ".format (a,b, Add_result))
 Sub_result = sub(a,b)
 logging.info("Subtraction: {} - {} is {} : ".format (a,b, Sub_result))
 
-Sales.display()
+Sales1.display()
