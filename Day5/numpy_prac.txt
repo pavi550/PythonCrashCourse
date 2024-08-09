@@ -1,0 +1,232 @@
+import numpy as np
+
+type1 = np.array([1, 2, 3, 4, 5, 6])
+print("Array : ", type1)
+print(type1.dtype)
+print("*********"*4)
+type2 = np.array([1.5, 2.5, 0.5, 6])
+print("Array : ", type2)
+print(type2.dtype)
+print("*********"*4)
+type3 = np.array(['abc', 'bcd', 'cde'])
+print("Array : ", type3)
+print(type3.dtype)
+print("*********"*4)
+type4 = np.array(["Nashik", "Solapur"], dtype='U5')  # array with elements of string with length 5
+print("Array : ", type4)
+print(type4.dtype)
+print("*********"*4)
+type5 = np.array([123, 432], dtype=float)
+print("Array : ", type5)
+print(type5.dtype)
+
+=================================================================
+
+import numpy as np
+array1d = np.array([1, 2, 3, 4, 5, 6])
+print(array1d)
+print(array1d.shape)
+print("*********"*4)
+array2d = np.array([[1, 2, 3], [4, 5, 6]])
+print(array2d)
+print(array2d.shape)
+print("*********"*4)
+array3d = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+print(array3d)
+print(array3d.shape)
+===================================================
+
+# Dimension of an array
+import numpy as np
+
+array1d = np.array([1, 2, 3, 4, 5, 6])
+print("The dimension: ", array1d.ndim)  # 1
+print("*********"*4)
+array2d = np.array([[1, 2, 3], [4, 5, 6]])
+print("The dimension: ", array2d.ndim)  # 2
+print("*********"*4)
+array3d = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+array3d = array3d.reshape(2, 3, 2)
+print("The dimension: ", array3d.ndim)  # 3
+print(array3d)
+==============================================
+
+import numpy as np
+
+thearray = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+print("Before:",thearray)
+thearray = thearray.reshape(2, 4)
+print("thearray.reshape(2, 4):\n",thearray)
+
+print("********" * 10)
+thearray = thearray.reshape(4, 2)
+print("thearray.reshape(4, 2):\n",thearray)
+
+print("********" * 10)
+thearray = thearray.reshape(8, 1)
+print("thearray.reshape(8, 1):\n",thearray)
+
+=================================================
+
+import numpy as np
+
+# Resize the array
+array1 = np.array(['1', '2', '3', '4', '5', '6', '7', '8'])
+print("Before:",array1)
+array1.resize(12)
+print(array1)
+print(array1.shape)
+print("********"*5)
+array1 = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+print("Before:",array1)
+array1.resize(2,6)
+print(array1)
+print(array1.shape)
+print("********"*5)
+array1 = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+print("Before:",array1)
+array1.resize(7)
+print(array1)
+print(array1.shape)
+
+==========================================================
+
+# Resize the array
+
+array1 = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+array1.resize(4)
+print(array1)
+
+array1 = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+array1.resize(2,4)
+print(array1)
+
+array1 = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+array1.resize(7)
+print(array1)
+
+=================================================
+
+import numpy as np
+
+array1 = np.zeros(3,dtype=int)
+print("np.zeros(3):\n",array1)
+print(array1.dtype)
+array3 = np.zeros((3,3),dtype=int)
+print("np.zeros((3,3)):\n",array3)
+print(array3.dtype)
+array2 = np.ones(3,dtype=int)
+print("np.ones(3):\n",array2)
+print(array2.dtype)
+array1 = np.zeros((5,5))
+print("np.zeros((5,5)):\n",array1)
+
+===================================================
+# Initialize the numpy array with the same numbers
+
+import numpy as np
+
+array1 = np.full((2,2),10)
+array3 = np.full((3,3),5)
+
+print("np.full((2,2),10):\n",array1)
+print("np.full((3,3),5):\n",array3)
+
+==============================================
+
+# Initialize numpy array with a range method
+
+import numpy as np
+n1 = np.arange(10,20)
+print("np.arange(10,20):\n",n1)
+
+n2 = np.arange(10,50,5)
+print("np.arange(10,50,5):\n",n2)
+
+==============================================
+
+# Initializing numpy array with random numbers
+
+import numpy as np
+n1 = np.random.randint(1,200,10)
+print("np.random.randint(1,200,10):\n",n1)
+
+n2 = np.random.randint(10,100,5)
+print("np.random.randint(10,100,5):\n",n2)
+
+
+============================================
+
+# Joining two numpy arrays
+
+import numpy as np
+
+# vertical stack
+n1 = np.array([10,20,30,40])
+print("Original array n1:\n",n1)
+print(n1.shape)
+n2 = np.array([50,60,70,80])
+print("Original array n2:\n",n2)
+print(n2.shape)
+n3 = np.vstack((n2,n1))
+print("np.vstack((n2,n1)):\n",n3)
+print(n3.shape)
+print("np.vstack((n1,n2)):\n",np.vstack((n1,n2)))
+
+-===================================================
+
+# Joining two numpy arrays
+
+import numpy as np
+
+#  horizontal stack
+n1 = np.array([10,20,30,40])
+print("Original array n1:\n",n1)
+print(n1.shape)
+n2 = np.array([50,60,70,80])
+print("Original array n2:\n",n2)
+print(n2.shape)
+n3 = np.hstack((n2,n1))
+print("np.hstack((n2,n1)):\n",n3)
+print(n3.shape)
+print("np.hstack((n1,n2)):\n",np.hstack((n1,n2)))
+
+==========================================
+# Joining two numpy arrays
+
+import numpy as np
+
+#  column stack
+n1 = np.array([10,20,30,40])
+print("Original array n1:\n",n1)
+print(n1.shape)
+n2 = np.array([50,60,70,80])
+print("Original array n2:\n",n2)
+print(n2.shape)
+n3 = np.column_stack((n2,n1))
+print("np.column_stack((n2,n1)):\n",n3)
+print(n3.shape)
+print("np.column_stack((n1,n2)):\n",np.column_stack((n1,n2)))
+
+==========================================================
+
+# Addition of two numpy arrays
+
+import numpy as np
+
+n1 = np.array([10,20,30,40])
+print("Original array n1:\n",n1)
+print(n1.shape)
+n2 = np.array([50,60,70,80])
+print("Original array n2:\n",n2)
+print(n2.shape)
+n3 = np.sum([n2,n1])
+print("np.sum([n2,n1]):\n",n3)
+print(n3.shape)
+# Adding the column values using the axis
+n3 = np.sum([n1,n2],axis = 0)
+print("np.sum([n1,n2],axis = 0):\n",n3)
+n3 = np.sum([n1,n2],axis = 1)
+print("np.sum([n1,n2],axis = 1):\n",n3)
+
+============================================================

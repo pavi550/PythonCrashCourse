@@ -1,0 +1,250 @@
+https://drive.google.com/drive/folders/1WW2MbcQqe-gwsDZFgPMBWTHwkMaBs0X8?usp=sharing
+
+
+NumPy (short for Numerical Python) is an open source Python library for doing
+scientific computing with Python.
+Travis Oliphant created NumPy package in 2005 by injecting the features of the
+ancestor module Numeric into another module Numarray.
+
+It gives an ability to create multidimensional array objects and perform faster mathematical operations.
+
+Most of the other libraries that we use in data analytics with Python, such as scikit-learn, SciPy
+ and Pandas use some of NumPy's features.
+
+# Advantages
+There are the following advantages of using NumPy for data analysis.
+
+1.NumPy performs array-oriented computing.
+2.It efficiently implements the multidimensional arrays.
+3.It performs scientific computations.
+4.It is capable of performing Fourier Transform and reshaping the data stored in multidimensional arrays.
+5.NumPy provides the in-built functions for linear algebra and random number generation.
+
+#Create NumPy Array
+To create a NumPy array we need to pass list of element values inside a square bracket as an argument to the np.array() function.
+
+---------
+import numpy as np
+ 
+array1d = np.array([1, 2, 3, 4, 5, 6])
+array2d = np.array([[1, 2, 3], [4, 5, 6]])
+array3d = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+ 
+print(array1d)
+ 
+print("-" * 10)
+print(array2d)
+ 
+print("-" * 10)
+print(array3d)
+-------------
+
+The main data structure for multidimensional arrays in NumPy is the ndarray class.
+Basic Attributes of the ndarray Class as follow
+
+Shape --> A tuple that specifies the number of elements for each dimension of the array.
+Size --> The total number elements in the array.
+Ndim --> Determines the dimension an array.
+nbytes	--> Number of bytes used to store the data.
+dtype	--> Determines the datatype of elements stored in array.
+
+------------------
+
+type1 = np.array([1, 2, 3, 4, 5, 6])
+print("Array : ",type1)
+print(type1.dtype)
+type2 = np.array([1.5, 2.5, 0.5, 6])
+print("Array : ",type2)
+print(type2.dtype)
+type3 = np.array(['abc', 'bcd', 'cde'])
+print("Array : ",type3)
+print(type3.dtype)
+type4 = np.array(["Nashik", "Solapur"], dtype='U5')
+print("Array : ",type4)
+print(type4.dtype)
+type5 = np.array([123, 432], dtype=float)
+print("Array : ",type5)
+print(type5.dtype)
+ 
+-----------------
+#Shape of an array
+The shape method determines the shape of NumPy array in
+form of (m, n) i.e (no. of rows) x (no. of columns).
+
+import numpy as np
+array1d = np.array([1, 2, 3, 4, 5, 6])
+print(array1d)
+print(array1d.shape)
+array2d = np.array([[1, 2, 3], [4, 5, 6]])
+print(array2d)
+print(array2d.shape)
+array3d = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+print(array3d)
+print(array3d.shape)
+
+-------------------------------
+#Dimension of an array
+import numpy as np
+ 
+array1d = np.array([1, 2, 3, 4, 5, 6])
+print("The dimension: ",array1d.ndim)  # 1
+ 
+array2d = np.array([[1, 2, 3], [4, 5, 6]])
+print("The dimension: ",array2d.ndim)  # 2
+ 
+array3d = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+array3d = array3d.reshape(2, 3, 2)
+print("The dimension: ",array3d.ndim)  # 3
+
+-------------------
+#Reshape an array
+The reshape () method modifies existing shape but original array remains unchanged.
+import numpy as np
+ 
+thearray = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+thearray = thearray.reshape(2, 4)
+print(thearray)
+ 
+print("-" * 10)
+thearray = thearray.reshape(4, 2)
+print(thearray)
+ 
+print("-" * 10)
+thearray = thearray.reshape(8, 1)
+print(thearray)
+
+------------------------
+# Resize the array
+
+array1 = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+array1.resize(4)
+print(array1)
+
+array1 = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+array1.resize(2,4)
+print(array1)
+
+array1 = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+array1.resize(7)
+print(array1)
+------------------------
+# converting List or tuple in array
+import numpy as np
+
+List = [1,2,3,4,5,6,7,8]
+
+array1 = np.array(List)
+print(array1)
+
+tup = ((8,7,7,5,4,3,3))
+array2 = np.array2(tup)
+print(array2)
+
+--------------------
+Zeros()
+ones()
+
+import numpy as np
+
+array1 = np.zeros(3)
+array3 = np.zeros((3,3))
+array2 = np.ones(3)
+
+print(array1)
+print(array2)
+
+array1 = np.zeros((5,5))
+print(array1)
+
+---------------------
+# Initialize the numpy array with the same numbers
+
+import numpy as np
+
+array1 = np.full((2,2),10)
+array3 = np.full((3,3),5)
+
+print(array1)
+print(array3)
+
+---------------------
+# Initialize numpy array with a range
+
+import numpy as np
+n1 = np.array(10,20)
+print(n1)
+
+n2 = np.array(10,50,5)
+print(n2)
+
+---------------------
+# Initializing numpy array with random numbers
+
+import numpy as np
+n1 = np.random.randint(1,200,10)
+print(n1)
+
+n2 = np.random.randint(10,100,5)
+print(n2)
+
+---------------------
+# Joining two numpy arrays
+
+import numpy as np
+
+# vertical stack
+n1 = np.array([10,20,30,40])
+print(n1)
+n2 = np.array([50,60,70,80])
+print(n2)
+n3 = np.vstack((n2,n1))
+print(n3)
+print(np.vstack((n1,n2)))
+
+
+#  horizontal stack
+n1 = np.array([10,20,30,40])
+print(n1)
+n2 = np.array([50,60,70,80])
+print(n2)
+n3 = np.hstack((n2,n1))
+print(n3)
+print(np.hstack((n1,n2)))
+
+#  column stack
+n1 = np.array([10,20,30,40])
+print(n1)
+n2 = np.array([50,60,70,80])
+print(n2)
+n3 = np.column_stack((n2,n1))
+print(n3)
+print(np.column_stack((n1,n2)))
+
+---------------------
+# Addition of two numpy arrays
+
+import numpy as np
+
+#  Adding two numpy array
+n1 = np.array([10,20,30,40])
+print(n1)
+n2 = np.array([50,60,70,80])
+print(n2)
+n3 = np.sum([n2,n1])
+print(n3)
+# Adding the column values using the axis
+n3 = np.sum([n1,n2],axis = 0)
+print(n3)
+n3 = np.sum([n1,n2],axis = 1)
+print(n3)
+
+---------------------
+np.mean(n1)
+np.median(n1)
+np.std(n1)
+
+
+
+
+
+

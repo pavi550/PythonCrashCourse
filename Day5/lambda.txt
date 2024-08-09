@@ -1,0 +1,13 @@
+my_list = [1, 5, 4, 6, 8, 11, 3, 12]
+print("The list is: ",my_list)
+new_list = list(filter(lambda x: (x%2 == 0) , my_list))
+print(new_list)
+
+
+def func1(num1,num2):
+    print("This is fun1")
+    return num1+num2
+
+num = lambda a,b:func1(a,b)
+
+print(num(24,12))

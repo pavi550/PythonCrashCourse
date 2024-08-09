@@ -1,0 +1,91 @@
+# Sending mail using Gmail
+
+import smtplib
+
+mailid = 'kumaprap@gmail.com'
+e_pass = input('gmail password ') #gmail generated app password input
+
+with smtplib.SMTP('smtp.gmail.com',587) as smtp:
+    smtp.starttls()   # encrypt the traffic
+
+    smtp.login(mailid,e_pass)
+
+    subject = 'Demo 2 for Email'
+    body = 'This is the first demo for email using python'
+
+    msg = f'Subject: {subject}\n\n{body}'
+
+    smtp.sendmail(mailid,mailid,msg)
+    print('The Mail is sent')
+
+----------------------------------------------
+# Sending mail to local server
+
+import smtplib
+#diverting the o/p to os
+# python -m smtpd -c DebuggingServer -n localhost:1025
+
+mailid = 'rohit002agrawal@gmail.com'
+e_pass = input('Enter the password')
+
+with smtplib.SMTP('localhost',1025) as smtp:
+   
+    subject = 'Demo 2 for Email'
+    body = 'This is the first demo for email using python'
+
+    msg = f'Subject: {subject}\n\n{body}'
+
+    smtp.sendmail(mailid,mailid,msg)
+    print('The Mail is sent')
+
+
+------------------------------------------------------------
+
+import smtplib
+from email.message import EmailMessage
+
+mailid = 'rohit002agrawal@gmail.com'
+#e_pass = input('Enter the password')
+
+msg = EmailMessage()
+msg['Subject'] ='Demo 3 for Email'
+msg['From'] = mailid
+msg['To'] = mailid
+msg.set_content('This is the body of the mail')
+
+with smtplib.SMTP('localhost',1025) as smtp:
+    #smtp.login(mailid,e_pass)
+
+    smtp.send_message(msg)
+    print('The mail is sent')
+
+----------------------------------------------------
+# Sending Attachments
+
+import smtplib
+from email.message import EmailMessage
+import imghdr
+
+mailid = 'rohit002agrawal@gmail.com'
+e_pass = input('Enter the password')
+
+msg = EmailMessage()
+msg['Subject'] ='Demo 4 for Email'
+msg['From'] = mailid
+msg['To'] = mailid
+msg.set_content('Please find the Image attached with mail')
+
+with open('journey.jpg','rb')as f:
+    file_data=f.read()
+    file_type = imghdr.what(f.name)
+    file_name = f.name
+
+msg.add_attachment(file_data,maintype = 'image',subtype = file_type,filename =file_name)
+
+with smtplib.SMTP_SSL('smtp.gmail.com',587) as smtp:
+    smtp.login(mailid,e_pass)
+
+    smtp.send_message(msg)
+    print('The mail is sent')
+
+----------------------------------------------------

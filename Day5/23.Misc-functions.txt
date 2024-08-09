@@ -1,0 +1,132 @@
+Python zip() method takes iterable or containers and returns a single iterator object, having mapped values from all the containers. 
+
+It is used to map the similar index of multiple containers so that they can be used just using a single entity. 
+
+========================================================
+
+
+print("Demo for Zip()")
+
+s_name = [ "Rohit", "Nikhil", "Anand", "Astha", "Sumit" ]
+s_id = [ 101,102,103,104,105 ]
+
+print("The name list is:\n", s_name)
+print("---------------"*4)
+print("The ID list is:\n", s_id)
+print("---------------"*4)
+
+print("Lets map the lists:")
+# using zip() to map values
+result = zip(s_name,s_id)
+
+print("Converting the result to list")
+print("---------------"*4)
+
+result = tuple(result)
+print("The mapped list is: ")
+print(result)
+print("---------------"*4)
+# Unzipping the values
+print("Unzipping the values:")
+name,id = zip(*result)
+
+print("The name list is:\n",name)
+print("---------------"*4)
+print("The ID list is:\n",id)
+print("---------------"*4)
+
+==========================================================
+# Enumerate()
+when dealing with iterators, we also get need to keep a count of iterations. Python eases the programmers’ task by providing a built-in function enumerate() for this task. Enumerate() method adds a counter to an iterable and returns it in a form of enumerating object. This enumerated object can then be used directly for loops or converted into a list of tuples using the list() method.
+
+-----------------------------------------
+# Python program to illustrate
+# enumerate function
+names = ["Rohit", "Anand", "Sumit","Priya"]
+str1 = "Python"
+
+print("The list is:",names)
+print("The string is: ",str1)
+print("-----------------"*5)
+
+print("Creating the enumerate objects")
+e1 = enumerate(names)
+e2 = enumerate(str1)
+
+print ("Return type:", type(e1))
+print("The enumeration for list is:")
+print (list(enumerate(e1)))
+print("-----------------"*5)
+
+print("The enumeration for list is:")
+print (list(enumerate(e2)))
+print("-----------------"*5)
+
+print("Changing the start index to 2 from 0:")
+print (list(enumerate(str1, 2)))
+
+===============================================
+
+# Using enumerate with for loop
+names = ["Rohit", "Anand", "Sumit","Priya"]
+
+print("The list is:",names)
+print("-----------------"*5)
+
+print("Accessing the tuples directly using for loop")
+
+for i in enumerate(names):
+    print(i)
+
+print("-------------------"*5)
+print("Changing the index and printing separately")
+
+for i,j in enumerate(names):
+    print(i,' --> ',j)
+
+=================================================
+# Copy Module
+In Python, Assignment statements do not copy objects, they create bindings between a target and an object. When we use the = operator, It only creates a new variable that shares the reference of the original object. In order to create “real copies” or “clones” of these objects, we can use the copy module in Python.
+
+#Deep copy
+In the case of deep copy, a copy of the object is copied into another object. It means that any changes made to a copy of the object do not reflect in the original object. 
+
+#Shallow copy
+In the case of shallow copy, a reference of an object is copied into another object. It means that any changes made to a copy of an object do reflect in the original object. In python, this is implemented using the “copy()” function. 
+
+=====================================================
+# importing copy module
+import copy
+
+test = [[12,34,33],10,45]
+print("The list is:\n",test)
+print("ID of test: ",id(test))
+print("------------------"*5)
+
+print("Creating a shallow copy using copy().")
+s_copy = copy.copy(test)
+print("The Shallow copy:\n",s_copy)
+print("ID of s_copy: ",id(s_copy))
+print("------------------"*5)
+
+print("Creating a shallow copy using copy().")
+d_copy = copy.deepcopy(test)
+print("The Deep copy:\n", d_copy)
+print("ID of d_copy: ", id(d_copy))
+print("------------------"*5)
+
+print("Updating the list elements:")
+test[0][1] = 121
+print("The list is:\n", test)
+print("ID of test: ", id(test))
+print("------------------"*5)
+
+print("The Shallow copy :\n", s_copy)
+print("ID of s_copy: ", id(s_copy))
+print("------------------"*5)
+
+print("The Deep copy:\n", d_copy)
+print("ID of d_copy: ", id(d_copy))
+print("------------------"*5)
+
+===============================================

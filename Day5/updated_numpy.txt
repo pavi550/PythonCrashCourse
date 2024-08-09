@@ -1,0 +1,227 @@
+import numpy as np
+
+array1d = np.array([1, 2, 3, 4, 5, 6])
+array2d = np.array([[1, 2, 3], [4, 5, 6]])
+array3d = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+print("The array is:")
+print(array1d)
+print("The array is:")
+print("-" * 10)
+print(array2d)
+print("The array is:")
+print("-" * 10)
+print(array3d)
+-------------------------------------------------------
+
+import numpy as np
+
+type1 = np.array([1, 2, 3, 4, 5, 6])
+print("Array : ", type1)
+print(type1.dtype)
+print("---------------------------"*2)
+type2 = np.array([1.5, 2.5, 0.5, 6])
+print("Array : ", type2)
+print(type2.dtype)
+print("---------------------------"*2)
+type3 = np.array(['abc', 'bcd', 'cde'])
+print("Array : ", type3)
+print(type3.dtype)
+print("---------------------------"*2)
+type4 = np.array(["Nashik", "Solapur",'Pune'], dtype='U5')
+print("Array : ", type4)
+print(type4.dtype)
+print("---------------------------"*2)
+type5 = np.array([123, 432], dtype=float)
+print("Array : ", type5)
+print(type5.dtype)
+
+-------------------------------------------------
+import numpy as np
+array1d = np.array([1, 2, 3, 4, 5, 6])
+print(array1d)
+print("The Shape is: ",array1d.shape)
+print("---------------------------"*2)
+array2d = np.array([[1, 2, 3], [4, 5,6]])
+print(array2d)
+print("The Shape is: ",array2d.shape)
+print("---------------------------"*2)
+array3d = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]],[[7, 8, 9], [10, 11, 12]]])
+print(array3d)
+print("The Shape is: ",array3d.shape)
+--------------------------------------------------------
+import numpy as np
+
+array1d = np.array([1, 2, 3, 4, 5, 6])
+print(array1d)
+print("The dimension: ", array1d.ndim)  # 1
+print("---------------------------"*2)
+array2d = np.array([[1, 2, 3], [4, 5, 6]])
+print(array2d)
+print("The dimension: ", array2d.ndim)  # 2
+print("---------------------------"*2)
+array3d = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+print(array3d)
+array3d = array3d.reshape(2, 3, 2)
+print(array3d)
+print("The dimension: ", array3d.ndim)  # 3
+------------------------------------------------------
+
+import numpy as np
+
+thearray = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+print(thearray.shape)
+thearray = thearray.reshape(2, 4)
+print("reshape(2, 4)\n",thearray)
+print("---------------------------"*2)
+print("-" * 10)
+thearray = thearray.reshape(4, 2)
+print("reshape(4,2)\n",thearray)
+print("---------------------------"*2)
+print("-" * 10)
+thearray = thearray.reshape(8, 1)
+print("reshape(8,1)\n",thearray)
+print(thearray.shape)
+print("---------------------------"*2)
+
+-----------------------------------------------------
+
+# Resize the array
+import numpy as np
+
+array1 = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+array1.resize(12)
+print(array1)
+print("---------------------------"*2)
+array1 = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+array1.resize(3,4)
+print(array1)
+print("---------------------------"*2)
+array1 = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+array1.resize(7)
+print(array1)
+
+------------------------------------------------------
+import numpy as np
+
+List = [1,2,3,4,5,6,7,8]
+print("The list is :",List)
+array1 = np.array(List)
+print(array1)
+
+tup = ((8,7,7,5,4,3,3))
+print("The Tuple is :",tup)
+array2 = np.array(tup)
+print(array2)
+
+---------------------------------------------
+
+import numpy as np
+
+array1 = np.zeros(3,dtype=int)
+print(array1)
+print(array1.dtype)
+print("----------------------------"*2)
+array3 = np.zeros((3,3),dtype=int)
+print(array3)
+print(array3.dtype)
+print("----------------------------"*2)
+array2 = np.ones(3)
+print(array2)
+print(array2.dtype)
+print("----------------------------"*2)
+array1 = np.zeros((5,5))
+print(array1)
+print(array1.dtype)
+
+---------------------------------------------
+
+# Initialize the numpy array with the same numbers
+
+import numpy as np
+
+array1 = np.full((2,2),10)
+print(array1)
+
+array3 = np.full((3,3),5)
+print(array3)
+
+array1 = np.full((2,2),'abc')
+print(array1)
+
+array3 = np.full((3,3),'5')
+print(array3)
+
+-------------------------------------------------
+
+# Initialize numpy array with a range
+
+import numpy as np
+n1 = np.arange(10,20)
+print(n1)
+
+n2 = np.arange(10,50,5)  #range functio with start,stop,step
+print(n2)
+
+------------------------------------------------
+
+# Initializing numpy array with random numbers
+
+import numpy as np
+n1 = np.random.randint(1,200,10)
+print(n1)
+
+n2 = np.random.randint(10,100,5)
+print(n2)
+
+
+-----------------------------------------
+
+import numpy as np
+
+# vertical stack
+n1 = np.array([10,20,30,40])
+print("Original Array N1:",n1)
+print("--------------------------"*2)
+n2 = np.array([50,60,70,80])
+print("Original Array N2:",n2)
+print("--------------------------"*2)
+n3 = np.vstack((n2,n1))
+print("After VStack((n2,n1))\n",n3)
+print("--------------------------"*2)
+print("After VStack((n1,n2))\n",np.vstack((n1,n2)))
+print("--------------------------"*2)
+print("Horizontal Satck")
+n3 = np.hstack((n2,n1))
+print("After HStack((n2,n1))\n",n3)
+print("--------------------------"*2)
+print("After HStack((n1,n2))\n",np.hstack((n1,n2)))
+
+print("--------------------------"*2)
+print("Column Satck")
+n3 = np.column_stack((n2,n1))
+print("After column_Stack((n2,n1))\n",n3)
+print("--------------------------"*2)
+print("After column_Stack((n1,n2))\n",np.column_stack((n1,n2)))
+
+---------------------------------------------------
+
+import numpy as np
+
+n1 = np.array([10,20,30,40])
+print("Original Array N1:",n1)
+print("--------------------------"*2)
+n2 = np.array([50,60,70,80])
+print("Original Array N2:",n2)
+print("--------------------------"*2)
+n3 = np.sum([n2,n1])
+print("sum([n2,n1])\n",n3)
+print("--------------------------"*2)
+# Adding the column values using the axis
+n3 = np.sum([n1,n2],axis = 0)
+print("sum([n1,n2],axis = 0)\n",n3)
+print("--------------------------"*2)
+n3 = np.sum([n1,n2],axis = 1)
+print("sum([n1,n2],axis = 1)\n",n3)
+print("--------------------------"*2)
+
+-----------------------------------------------

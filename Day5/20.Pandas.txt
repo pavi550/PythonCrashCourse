@@ -1,0 +1,416 @@
+#Python Pandas
+
+Pandas is defined as an open-source library that provides high-performance data manipulation in Python.
+The name of Pandas is derived from the word Panel Data, which means an
+Econometrics from Multidimensional data. It is used for data analysis in Python and
+developed by Wes McKinney in 2008.
+
+Pandas is built on top of the Numpy package, means Numpy is required for operating the Pandas.
+
+#Benefits of Pandas
+The benefits of pandas over using other language are as follows:
+
+Data Representation: It represents the data in a form that is suited for data analysis
+through its DataFrame and Series.
+Clear code: The clear API of the Pandas allows you to focus on the core part of the code.
+ So, it provides clear and concise code for the user.
+
+# Python Pandas Data Structure
+1) Series
+It is defined as a one-dimensional array that is capable of storing various data types.
+
+2)DataFrame
+It is a widely used data structure of pandas and works with a two-dimensional array
+with labeled axes (rows and columns). DataFrame is defined as a standard way to
+store data and has two different indexes, i.e., row index and column index
+
+# Creating Series using list:
+---------------------------------
+import pandas as pd
+import numpy as np
+
+n1 = np.array([1.5, 2.5, 3, 4.5, 5.0, 6])
+print("The numpy array is:\n",n1[3])
+
+s1 = pd.Series([1.5, 2.5, 3, 4.5, 5.0, 6])
+print(s1)
+print(type(s1))
+print(s1[3])
+
+# Creating Series using the index:
+------------------------------------
+import pandas as pd
+
+s1 = pd.Series([1,2,3,44,5,6],index=['a','b','c','d','e','f'])
+print(s1)
+
+
+#Creating Series of string values with name:
+------------------------------------
+import pandas as pd
+ 
+ser2 = pd.Series(["India", "Canada", "Germany"], name="Countries")
+print(ser2)
+--------------------------------------------
+
+#Creating Series using dictionary:
+import pandas as pd
+ 
+ser4 = pd.Series({"India": "New Delhi",
+                  "Japan": "Tokyo",
+                  "UK": "London"})
+print(ser4)
+
+-----------------------------------------------
+
+#using NumPy functions:
+
+import pandas as pd
+import numpy as np
+ 
+ser1 = pd.Series(np.linspace(1, 10, 5))
+print(ser1)
+ 
+ser2 = pd.Series(np.random.normal(size=5))
+print(ser2)
+
+-------------------
+#get index and values of series 
+import pandas as pd
+import numpy as np
+ 
+ser1 = pd.Series({"India": "New Delhi",
+                  "Japan": "Tokyo",
+                  "UK": "London"})
+ 
+print(ser1.values)
+print(ser1.index)
+ 
+print("\n")
+ 
+ser2 = pd.Series(np.random.normal(size=5))
+print(ser2.index)
+print(ser2.values)
+-----------------------
+
+#Get Length Size and Shape of a Series
+
+import pandas as pd
+ 
+values = ["India", "Canada", "Australia",
+          "Japan", "Germany", "France"]
+ 
+code = ["IND", "CAN", "AUS", "JAP", "GER", "FRA"]
+ 
+ser1 = pd.Series(values, index=code)
+ 
+print(len(ser1))
+ 
+print(ser1.shape)
+ 
+print(ser1.size)
+----------------------
+
+#get the first or last few rows from a Series
+import pandas as pd
+
+values = ["India", "Canada", "Australia",
+          "Japan", "Germany", "France"]
+
+code = ["IND", "CAN", "AUS", "JAP", "GER", "FRA"]
+
+ser1 = pd.Series(values, index=code)
+
+print("-----Head()-----")
+print(ser1.head())
+
+print("\n\n-----Head(2)-----")
+print(ser1.head(2))
+
+print("-----tail()-----")
+print(ser1.tail())
+
+print("\n\n-----tail(2)-----")
+print(ser1.tail(2))
+-------------------
+
+#Slicing a Series into subsets
+
+import pandas as pd
+ 
+num = [000, 100, 200, 300, 400, 500, 600, 700, 800, 900]
+ 
+idx = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+ 
+series = pd.Series(num, index=idx)
+ 
+print("\n [2:4] \n")
+print(series[2:4])
+ 
+print("\n [1:6:2] \n")
+print(series[1:6:2])
+ 
+print("\n [:6] \n")
+print(series[:6])
+ 
+print("\n [4:] \n")
+print(series[4:])
+ 
+print("\n [:4:2] \n")
+print(series[:4:2])
+ 
+print("\n [4::2] \n")
+print(series[4::2])
+ 
+print("\n [::-1] \n")
+print(series[::-1])
+--------------------------
+#create and print DataFrame 
+
+
+import pandas as pd
+ 
+employees = pd.DataFrame({
+    'EmpCode': ['Emp001', 'Emp00'],
+    'Name': ['John Doe', 'William Spark'],
+    'Occupation': ['Chemist', 'Statistician'],
+    'Date Of Join': ['2018-01-25', '2018-01-26'],
+    'Age': [23, 24]})
+ 
+print(employees)
+-------------------
+
+#rename DataFrame columns name
+import pandas as pd
+ 
+employees = pd.DataFrame({
+    'EmpCode': ['Emp001', 'Emp00'],
+    'Name': ['John Doe', 'William Spark'],
+    'Occupation': ['Chemist', 'Statistician'],
+    'Date Of Join': ['2018-01-25', '2018-01-26'],
+    'Age': [23, 24]})
+ 
+employees.columns = ['EmpCode', 'EmpName', 'EmpOccupation', 'EmpDOJ', 'EmpAge']
+ 
+print(employees)
+
+-----------------------
+
+#set Index and Columns
+import pandas as pd
+ 
+employees = pd.DataFrame(
+    data={'Name': ['John Doe', 'William Spark'],
+          'Occupation': ['Chemist', 'Statistician'],
+          'Date Of Join': ['2018-01-25', '2018-01-26'],
+          'Age': [23, 24]},
+    index=['Emp001', 'Emp002'],
+    columns=['Name', 'Occupation', 'Date Of Join', 'Age'])
+ 
+print(employees)
+-----------------
+
+#Drop DataFrame Column(s) by Name and Index:
+import pandas as pd
+ 
+employees = pd.DataFrame({
+    'EmpCode': ['Emp001', 'Emp002', 'Emp003', 'Emp004', 'Emp005'],
+    'Name': ['John', 'Doe', 'William', 'Spark', 'Mark'],
+    'Occupation': ['Chemist', 'Statistician', 'Statistician',
+                   'Statistician', 'Programmer'],
+    'Date Of Join': ['2018-01-25', '2018-01-26', '2018-01-26', '2018-02-26',
+                     '2018-03-16'],
+    'Age': [23, 24, 34, 29, 40]})
+ 
+print(employees)
+ 
+print("\n Drop Column by Name \n")
+employees.drop('Age', axis=1, inplace=True)
+print(employees)
+ 
+print("\n Drop Column by Index \n")
+employees.drop(employees.columns[[0,1]], axis=1, inplace=True)
+print(employees)
+------------------
+
+#Basic ways to select rows
+
+import pandas as pd
+ 
+employees = pd.DataFrame({
+    'EmpCode': ['Emp001', 'Emp002', 'Emp003', 'Emp004', 'Emp005'],
+    'Name': ['John', 'Doe', 'William', 'Spark', 'Mark'],
+    'Occupation': ['Chemist', 'Statistician', 'Statistician',
+                   'Statistician', 'Programmer'],
+    'Date Of Join': ['2018-01-25', '2018-01-26', '2018-01-26', '2018-02-26',
+                     '2018-03-16'],
+    'Age': [23, 24, 34, 29, 40]})
+ 
+print("\nUse == operator\n")
+print(employees.loc[employees['Age'] == 23])
+ 
+print("\nUse < operator\n")
+print(employees.loc[employees['Age'] < 30])
+ 
+print("\nUse != operator\n")
+print(employees.loc[employees['Occupation'] != 'Statistician'])
+ 
+print("\nMultiple Conditions\n")
+print(employees.loc[(employees['Occupation'] != 'Statistician') &
+                    (employees['Name'] == 'John')])
+--------------------
+
+#Iterate over rows and columns
+import pandas as pd
+ 
+employees = pd.DataFrame({
+    'EmpCode': ['Emp001', 'Emp002', 'Emp003', 'Emp004', 'Emp005'],
+    'Name': ['John', 'Doe', 'William', 'Spark', 'Mark'],
+    'Occupation': ['Chemist', 'Statistician', 'Statistician',
+                   'Statistician', 'Programmer'],
+    'Date Of Join': ['2018-01-25', '2018-01-26', '2018-01-26', '2018-02-26',
+                     '2018-03-16'],
+    'Age': [23, 24, 34, 29, 40]})
+ 
+print("\n Example iterrows \n")
+for index, col in employees.iterrows():
+    print(col['Name'], "--", col['Age'])
+ 
+ 
+print("\n Example itertuples \n")
+for row in employees.itertuples(index=True, name='Pandas'):
+    print(getattr(row, "Name"), "--", getattr(row, "Age"))
+
+--------------------------
+#Add Column to DataFrame:
+import pandas as pd
+ 
+employees = pd.DataFrame({
+    'EmpCode': ['Emp001', 'Emp002', 'Emp003', 'Emp004', 'Emp005'],
+    'Name': ['John', 'Doe', 'William', 'Spark', 'Mark'],
+    'Occupation': ['Chemist', 'Statistician', 'Statistician',
+                   'Statistician', 'Programmer'],
+    'Date Of Join': ['2018-01-25', '2018-01-26', '2018-01-26', '2018-02-26',
+                     '2018-03-16'],
+    'Age': [23, 24, 34, 29, 40]})
+ 
+employees['City'] = ['London', 'Tokyo', 'Sydney', 'London', 'Toronto']
+ 
+print(employees)
+--------------------
+
+#Dictionary to DataFrame:
+import pandas as pd
+ 
+data = ({'Age': [30, 20, 22, 40, 32, 28, 39],
+                   'Color': ['Blue', 'Green', 'Red', 'White', 'Gray', 'Black',
+                             'Red'],
+                   'Food': ['Steak', 'Lamb', 'Mango', 'Apple', 'Cheese',
+                            'Melon', 'Beans'],
+                   'Height': [165, 70, 120, 80, 180, 172, 150],
+                   'Score': [4.6, 8.3, 9.0, 3.3, 1.8, 9.5, 2.2],
+                   'State': ['NY', 'TX', 'FL', 'AL', 'AK', 'TX', 'TX']
+                   })
+print(data)
+ 
+df = pd.DataFrame(data)
+ 
+print(df)
+------------------
+#Determine DataFrame Columns DataType
+
+import pandas as pd
+ 
+df = pd.DataFrame({'Age': [30, 20, 22, 40, 32, 28, 39],
+                   'Color': ['Blue', 'Green', 'Red', 'White', 'Gray', 'Black',
+                             'Red'],
+                   'Food': ['Steak', 'Lamb', 'Mango', 'Apple', 'Cheese',
+                            'Melon', 'Beans'],
+                   'Height': [165, 70, 120, 80, 180, 172, 150],
+                   'Score': [4.6, 8.3, 9.0, 3.3, 1.8, 9.5, 2.2],
+                   'State': ['NY', 'TX', 'FL', 'AL', 'AK', 'TX', 'TX']
+                   },
+                  index=['Jane', 'Nick', 'Aaron', 'Penelope', 'Dean',
+                         'Christina', 'Cornelia'])
+ 
+print(df.dtypes)
+----------------------------
+
+#create two different DataFrames and perform the merging operations on it.
+
+# import the pandas library
+import pandas as pd
+left = pd.DataFrame({
+   'id':[1,2,3,4,5],
+   'Name': ['Alex', 'Amy', 'Allen', 'Alice', 'Ayoung'],
+   'subject_id':['sub1','sub2','sub4','sub6','sub5']})
+right = pd.DataFrame(
+   {'id':[1,2,3,4,5],
+   'Name': ['Billy', 'Brian', 'Bran', 'Bryce', 'Betty'],
+   'subject_id':['sub2','sub4','sub3','sub6','sub5']})
+print (left)
+print (right)
+
+---------------------------------------------
+
+#Merge Two DataFrames on a Key
+
+import pandas as pd
+left = pd.DataFrame({
+   'id':[1,2,3,4,5],
+   'Name': ['Alex', 'Amy', 'Allen', 'Alice', 'Ayoung'],
+   'subject_id':['sub1','sub2','sub4','sub6','sub5']})
+right = pd.DataFrame({
+	'id':[1,2,3,4,5],
+   'Name': ['Billy', 'Brian', 'Bran', 'Bryce', 'Betty'],
+   'subject_id':['sub2','sub4','sub3','sub6','sub5']})
+print(pd.merge(left,right,on='id'))
+
+-------------------------------------------------
+
+#Merge Two DataFrames on Multiple Keys
+
+import pandas as pd
+left = pd.DataFrame({
+   'id':[1,2,3,4,5],
+   'Name': ['Alex', 'Amy', 'Allen', 'Alice', 'Ayoung'],
+   'subject_id':['sub1','sub2','sub4','sub6','sub5']})
+right = pd.DataFrame({
+	'id':[1,2,3,4,5],
+   'Name': ['Billy', 'Brian', 'Bran', 'Bryce', 'Betty'],
+   'subject_id':['sub2','sub4','sub3','sub6','sub5']})
+print pd.merge(left,right,on=['id','subject_id'])
+
+
+----------------------------------------------------
+# reading data from table and convert it into dataframe
+import sqlite3
+import pandas as pd
+
+conn = sqlite3.connect('stud.db')
+
+print('The database Connection is complete ')
+
+# conn.execute('update stud set id=18 where id=10;')
+conn.execute('delete from stud where id = 13;')
+conn.commit()
+print('The records deleted are: ',conn.total_changes)
+
+data = conn.execute('select id,name from stud;')
+print(type(data))
+list1 =[]
+for i in data:
+    list1.append(i)
+    print('The id is : ',i[0],'|Name is :',i[1])
+print(list1)
+df = pd.DataFrame(list1)
+
+print(df)
+
+
+print('The data is selected')
+conn.close()
+
+
+
+

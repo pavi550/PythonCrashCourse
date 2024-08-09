@@ -1,0 +1,358 @@
+Python -- Why python?
+
+java-- oop
+
+2000 -- internet --- mobile 
+
+daily motions -- Youtube
+orcut -- data generated -- data analysis -- data mining
+
+speed to process -- RDBMS is not efficient (huge amount of data)
+2003 --> map reduce and dfs
+Big data tech --> Hadoop -->(hdfs)distributed database system
+
+NoSQL databases - no acid properties 
+2005-2008
+2008-2012
+
+2008-2012 -- > Data science, ML, Al -- Cloud computing  
+
+executable line --
+
+interpreted language : - code is executed line by line
+inbuild compiler -- jit(just in time) compiler
+compiler -->
+
+main() // block of code
+{/starts
+return type(type)
+int a,b;
+a = 20, b=30;  // strongly typed data
+String name = "123"
+
+a = 'rohit'
+long 
+double
+float
+
+for (i =0;i<5;i++);
+{
+
+}
+
+
+}// end of the block
+
+indent - (white)space
+
+def func1():
+    print()   // indentations
+    print()/ end
+
+print()
+
+for():
+
+lightly typed 
+dynamic prog lang
+ 5 times
+for(i=1;i<=5;i++) # initial ; exit condition ;inc / dec
+{
+
+}
+     
+=================================
+expression = input()
+ans = eval(expression)
+print(ans)
+
+=======================
+string = 'python programming'
+
+chars = []
+count = 0
+# Iterate through each character in the string
+for char in string:
+		# If the character is not in the dictionary, add it
+	if char not in chars:
+		chars.append(char)
+	else:
+			# If the character is already in the dictionary, increment the count
+		count += 1
+print("characters are: ",chars)
+print("total duplicate characters : ",count)
+
+=================================
+
+The bytearray type is a mutable sequence of integers in the range between 0 and 255. It allows you to work directly with binary data. It can be used to work with low-level data such as that inside of images or arriving directly from the network.
+
+Bytearray type inherits methods from both list and str types.
+
+prime_numbers = [2, 3, 5, 7]
+
+# convert list to bytearray
+byte_array = bytearray(prime_numbers)
+print(byte_array)
+
+=================================
+
+Python bytes() function is used to convert an object to an immutable (cannot be modified) byte object of the given size and data. The Python bytes() function returns a byte's object, which is an immutable series of integer numbers ranging from 0 to 256.
+
+
+txt = 'Hello World'
+arr = bytes(txt, 'utf-8')
+print(arr)
+print('')
+
+# source string without other parameters
+string = 'Welcome Home'
+arr2 = bytes(string)   # as there are no other parameters specified, it will throw TypeError
+print(arr2)
+
+How many bytes is a string in Python?
+Each character of a string is allocated memory space of 1 byte in Python.
+
+
+mytext = 'Python'
+
+x = len(mytext.encode('utf-8'))
+print('Length of string in Bytes:', x)
+
+
+=================================
+Python memoryview() function returns the memory views objects.
+
+As Memory view is a safe way to expose the buffer protocol in Python and a memoryview behaves just like bytes in many useful contexts (for example, it supports the mapping protocol) so it provides an adequate replacement if used carefully.
+
+Buffer protocol provides a way to access the internal data of an object. This internal data is a memory array or a buffer.
+
+memoryview objects allow Python code to access the internal data of an object that supports the buffer protocol without copying. The memoryview() function allows direct read and write access to an object’s byte-oriented data without needing to copy it first. That can yield large performance gains when operating on large objects since it doesn’t create a copy when slicing.
+
+# Python program to illustrate
+# Modifying internal data using memory view
+
+# random bytearray
+byte_array = bytearray('XYZ', 'utf-8')
+print('Before update:', byte_array)
+
+mem_view = memoryview(byte_array)
+
+# update 2nd index of mem_view to J
+mem_view[2] = 74
+print('After update:', byte_array)
+
+stud
+sid|sname|sage
+101|Rohit|20
+102|Anand|20
+
+d1 = {'sid':[101,102],
+       'sname':['Rohit','Anand'] }
+
+
+functions -- code reusablility
+
+int public display(int arg1,int arg2)
+{
+
+(may or may not) return 12
+}
+
+display(12,23)// execute
+a = 20 //
+def add(arg1,arg2 = 15): // default argument
+     a =20 ,b=23
+     print()
+     c = arg1+arg2
+     #return c-- None
+
+print()
+add(12) //positional arguments # call/execute the function
+print(add(20,23)) 
+result = add()
+print(result)
+
+add(arg2=10,arg1=24)  # shufful the positions
+add(12,arg2=20)
+
+1.def func1(a,b=20):
+2.  print("The value of a :",a)
+3.  print("The value of b :",b)
+
+4.func1(20)
+5.func1(12,30)
+6.func1(15,a=30)
+
+
+
+#The except statement with no exception
+try:    
+    a = int(input("Enter a:"))    
+    b = int(input("Enter b:"))    
+    c = a/b;    
+    print("a/b = %d"%c)    
+except:    
+    print("Error") 
+Finally:
+    print("Inside Finally block")
+else:    
+    print("This is the else block")   
+
+provide methods/functions 
+1)create / delete file
+2)open
+3)write - read  -append
+4)close
+
+system- data--> hdd(location) abc.txt ---> ram --> hdd
+
+file-->settings-->project-->interpreter
+
+import abc.java
+
+owner -- code available for self only
+guest -- code visible to guest
+
+
+1. import from other module and use 
+ -- import mod1 
+ -- from mod1 import func1 as f1
+
+2.we can use alias names 
+ - we can import specific code/func 
+
+========================================
+sdlc- - change in the requirement
+- rebuilding entire
+-- 3 features 2 more features
+-1,2,3,4,5 --> 1,2,3,4  --> 1,2,3,4,5
+
+modular concepts --> broken down in modules
+1 --> abc
+2--> abcd
+
+features
+===========
+1.Abstraction 2. Inheritance 3.Polymorphism 4.Encapsulation
+
+Object Oriented programming (modular)
+=======================================
+Every thing is based on
+1) Class(structure/model/template) --->classroom -->facilities
+ 1)attributes(variables)  2)functionality(methods/functions)
+student --sid,sname,age,addr  1)plays 2)study 3)exam 4)display
+
+object belongs to class
+2) Object --->students 
+
+
+entity--> active user --> tables
+attributes --> features of entity-->sid,sname,age,addr
+
+inheritance :- parent class (def add)-->child class (def add)(use features/property from parent class)
+
+Abstraction:- Hide the details which are not required to
+Polymorphism: -(many forms)(roles) one features that acts differently in different situations - method overloading. method overriding
+
+Encapsulation:- Binding (wrappinng)
+
+student -->
+sid|sname|sage|addr
+--------------------
+101|rohit|18|pune
+102|anand|18|nashik
+
+s1-sid-101,sname-rohit,sage-18,addr-pune
+s2-sid-102,s
+s1.display()
+
+pen as object
+-id,color,model,type,brand
+
+-write() -refilling()
+
+p1 - -- behaviour - pen used to write 
+
+class Parent:   # base class , parent class, super class
+id
+name
+def display():
+def func1():
+
+class child(Parent): # derived , child, subclass
+ def__init__():
+def func2():
+
+c1 = child()
+c1.display
+c1.func1()
+print(c1.id)
+		base
+		|
+	child1		child2
+	  |	      	  |
+child3 		child4 child5   child6
+
+polymorphism - many forms
+
+method overriding - runtime -jvm 
+method overloading - many methods same name but different arguments/   -- compile time
+
+method overriding
+
+method overloading
+
+method :
+1) belong to a class
+2) will always self a s a default parameter
+3) can be called using object only
+4) may or may not return value
+
+functions:
+1)declare in main program
+2)theirs no default parameter
+3)can be accessed with out object 
+4)may or may not return value
+
+some good design patterns that will be used using oops concept in python
+
+automation examples and use cases
+
+oops --major pillars
+
+class -- template --2bhk, 
+variable , functions(methods) learn(),practice()
+
+Object - 12 --id,name,addr,age,exp
+
+database --
+structure --> 
+inheritance
+abstraction
+polymorphism
+encapsulation
+
+abstract class1()
+abstract display();
+
+class abc extends class1()
+
+display()
+{}
+
+xptgrlzynrqjthlt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

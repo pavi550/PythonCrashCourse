@@ -1,0 +1,133 @@
+# Connecting to database and creating table
+
+# import mysql connector
+
+import sqlite3
+
+conn = sqlite3.connect('stud.db')
+
+print('The database Connection is complete ')
+
+conn.execute('''create table stud(id integer(4),name text(30));''')
+print('The table is created')
+
+conn.commit()
+conn.close()
+
+
+---------------------------------------------------------
+
+# Insert operation
+# import mysql connector
+
+import sqlite3
+
+conn = sqlite3.connect('stud.db')
+
+print('The database Connection is complete ')
+
+conn.execute('insert into stud values(11,"Shruti")')
+conn.execute('insert into stud values(12,"Neha")')
+conn.execute('insert into stud values(13,"Suresh")')
+conn.execute('insert into stud values(14,"Rohan")')
+print('The Data is inserted')
+
+conn.commit()
+conn.close()
+
+------------------------------------------------------------
+# Update, delete and select operations
+ 
+import sqlite3
+
+conn = sqlite3.connect('stud.db')
+
+print('The database Connection is complete ')
+
+# conn.execute('update stud set id=18 where id=10;')
+conn.execute('delete from stud where id = 13;')
+conn.commit()
+print('The records deleted are: ',conn.total_changes)
+
+data = conn.execute('select id,name from stud;')
+
+for i in data:
+    print('The id is : ',i[0],'|Name is :',i[1])
+
+
+print('The data is selected')
+conn.close()
+
+----------------------------------------------------
+# Mysql demo
+
+import os
+import mysql.connector
+
+# Create the connection object
+
+db_name = input('Enter the database name' )
+myconn = mysql.connector.connect(host="localhost", user="root", passwd="namish", database=db_name)
+
+
+========================================================
+# oracle database with python
+
+https://www.oracle.com/database/technologies/appdev/python/quickstartpythononprem.html
+
+
+=====================================================
+
+# importing module
+import cx_Oracle
+
+# Create a table in Oracle database
+try:
+
+	con = cx_Oracle.connect('hr/hr@localhost:1521/xe')
+	print(con.version)
+
+	# Now execute the sqlquery
+	cursor = con.cursor()
+
+	# Creating a table employee
+	cursor.execute("create table emp(empid integer primary key, name varchar2(30), salary number(10, 2))")
+
+	print("Table Created successfully")
+
+except cx_Oracle.DatabaseError as e:
+	print("There is a problem with Oracle", e)
+
+# by writing finally if any error occurs
+# then also we can close the all database operation
+finally:
+	if cursor:
+		cursor.close()
+	if con:
+		con.close()
+
+ ===========================================================
+# importing module
+import cx_Oracle
+
+# Inserting a record into a table in Oracle database
+try:
+	con = cx_Oracle.connect('tiger/scott@localhost:1521/xe')
+	cursor = con.cursor()
+	
+	#con.autocommit = True
+	# Inserting a record into table employee
+	cursor.execute('insert into emp values(10001,\'Rohit\',40000.00)')
+
+	# commit() 
+	con.commit()
+	print('Record inserted successfully')
+
+except cx_Oracle.DatabaseError as e:
+	print("There is a problem with Oracle", e)
+
+finally:
+	if cursor:
+		cursor.close()
+	if con:
+		con.close()
